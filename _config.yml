@@ -1,3 +1,24 @@
+remote_theme: "mmistakes/so-simple-theme@3.2.0"
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate
+
+
+locale: it-IT
 title: Stratus Lab Unime
 description: Secure TRustless Autonomous Technologies for Ubiquitous Systems Lab
-theme: jekyll-theme-minimal
+baseurl: ""
+
+paginate: 5
+paginate_path: /page:num/
+
+author:
+  name: "Stratus Lab"
+  bio: "Stratus Lab Unime"
+  
+# Footer
+footer_links:
+  - title: GitHub
+    url: https://github.com/Stratus-Lab-Unime
