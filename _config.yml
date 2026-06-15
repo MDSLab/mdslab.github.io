@@ -9,7 +9,9 @@ plugins:
 locale: it-IT
 title: Stratus Lab Unime
 description: Secure TRustless Autonomous Technologies for Ubiquitous Systems Lab
+url: "https://stratus-lab-unime.github.io"
 baseurl: ""
+skin: "default"
 
 paginate: 5
 paginate_path: /page:num/
@@ -17,8 +19,9 @@ paginate_path: /page:num/
 author:
   name: "Stratus Lab"
   bio: "Stratus Lab Unime"
-  
+
 # Footer
 footer_links:
   - title: GitHub
     url: https://github.com/Stratus-Lab-Unime
+    icon: fab fa-github-square
