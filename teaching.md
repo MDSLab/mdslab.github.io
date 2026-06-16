@@ -1,8 +1,7 @@
 ---
+layout: page
 title: Teaching
-layout: category
-permalink: /categories/edge-case/
-taxonomy: Edge Case
+permalink: /teaching/
 ---
 
-Sample post listing for the category `Edge Case`.
+Contenuto dei corsi qui.
