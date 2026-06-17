@@ -1,4 +1,4 @@
-from pybtex.database import parse_string, PybtexError
+import re
 import sys
 from collections import defaultdict
 
@@ -58,47 +58,64 @@ permalink: /publications/
 
 """
 
-# Leggi il file .bib come testo e rinomina le chiavi duplicate
-with open(BIB_FILE, "r", encoding="utf-8") as f:
-    bib_text = f.read()
-
-# Rinomina chiavi duplicate aggiungendo suffisso _b, _c, ecc.
-seen_keys = {}
-cleaned_lines = []
-
-for line in bib_text.splitlines():
-    stripped = line.strip()
-    if stripped.startswith("@") and "{" in stripped:
-        key = stripped.split("{")[1].rstrip(",").strip()
+def extract_entries(bib_text):
+    """Estrae manualmente le entry BibTeX dal testo."""
+    entries = []
+    # Trova ogni entry @type{key, ...}
+    pattern = re.compile(r'@(\w+)\s*\{([^,]+),', re.MULTILINE)
+    
+    positions = [(m.start(), m.group(1), m.group(2).strip()) for m in pattern.finditer(bib_text)]
+    
+    seen_keys = {}
+    
+    for i, (start, entry_type, key) in enumerate(positions):
+        # Determina la fine dell'entry (inizio della prossima)
+        end = positions[i + 1][0] if i + 1 < len(positions) else len(bib_text)
+        entry_text = bib_text[start:end]
+        
+        # Deduplica chiavi
         if key in seen_keys:
             seen_keys[key] += 1
             suffix = chr(ord('a') + seen_keys[key])
             new_key = f"{key}_{suffix}"
             print(f"Warning: duplicate key '{key}' renamed to '{new_key}'")
-            line = line.replace("{" + key, "{" + new_key, 1)
+            key = new_key
         else:
             seen_keys[key] = 0
-    cleaned_lines.append(line)
+        
+        # Estrai campi con regex
+        fields = {}
+        field_pattern = re.compile(r'(\w+)\s*=\s*[\{"](.+?)[\}"](?:\s*,|\s*\})', re.DOTALL)
+        for fm in field_pattern.finditer(entry_text):
+            fname = fm.group(1).lower()
+            fval = fm.group(2).replace('\n', ' ').replace('{', '').replace('}', '').strip()
+            fields[fname] = fval
+        
+        if fields.get('title') and fields.get('year'):
+            entries.append({
+                'key': key,
+                'type': entry_type.lower(),
+                'fields': fields
+            })
+        else:
+            print(f"Warning: skipping entry '{key}' (missing title or year)")
+    
+    return entries
 
-cleaned_bib = "\n".join(cleaned_lines)
+# Leggi file
+with open(BIB_FILE, "r", encoding="utf-8") as f:
+    bib_text = f.read()
 
-try:
-    bib_data = parse_string(cleaned_bib, bib_format="bibtex")
-except PybtexError as e:
-    print(f"Error parsing BibTeX file: {e}")
-    sys.exit(1)
+entries = extract_entries(bib_text)
+print(f"Parsed {len(entries)} entries.")
 
-# Sort entries by year descending
-entries = sorted(
-    bib_data.entries.values(),
-    key=lambda e: int(e.fields.get("year", 0)),
-    reverse=True
-)
+# Ordina per anno decrescente
+entries.sort(key=lambda e: int(e['fields'].get('year', 0)), reverse=True)
 
-# Group by year
+# Raggruppa per anno
 by_year = defaultdict(list)
 for entry in entries:
-    year = entry.fields.get("year", "Unknown")
+    year = entry['fields'].get('year', 'Unknown')
     by_year[year].append(entry)
 
 md = HEADER
@@ -106,31 +123,25 @@ md = HEADER
 for year in sorted(by_year.keys(), reverse=True):
     md += f"## {year}\n\n<ul class=\"pub-list\">\n"
     for entry in by_year[year]:
-        fields = entry.fields
+        fields = entry['fields']
 
-        title = fields.get("title", "Untitled").replace("{", "").replace("}", "")
+        title = fields.get('title', 'Untitled')
+        authors = fields.get('author', '')
+        # Formatta autori: "Last, First and Last, First" → "First Last, First Last"
+        author_list = [a.strip() for a in authors.split(' and ')]
+        formatted_authors = []
+        for a in author_list:
+            if ',' in a:
+                parts = a.split(',', 1)
+                formatted_authors.append(f"{parts[1].strip()} {parts[0].strip()}")
+            else:
+                formatted_authors.append(a)
+        author_str = ', '.join(formatted_authors)
 
-        try:
-            authors = entry.persons.get("author", [])
-            author_str = ", ".join(
-                " ".join(filter(None, [
-                    " ".join(str(n) for n in p.first_names),
-                    " ".join(str(n) for n in p.last_names)
-                ]))
-                for p in authors
-            )
-        except Exception:
-            author_str = fields.get("author", "")
+        venue = fields.get('journal') or fields.get('booktitle') or fields.get('publisher') or ''
 
-        venue = (
-            fields.get("journal") or
-            fields.get("booktitle") or
-            fields.get("publisher") or
-            ""
-        ).replace("{", "").replace("}", "")
-
-        url = fields.get("url", "") or fields.get("doi", "")
-        if url and url.startswith("10."):
+        url = fields.get('url', '') or fields.get('doi', '')
+        if url and url.startswith('10.'):
             url = f"https://doi.org/{url}"
 
         title_html = f'<a href="{url}" target="_blank">{title}</a>' if url else title
