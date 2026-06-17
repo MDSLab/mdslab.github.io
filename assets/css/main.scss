@@ -1,0 +1,12 @@
+---
+---
+
+@import "so-simple";
+
+/* Rimpicciolisce l'immagine hero */
+.page-image img {
+  max-height: 400px;  /* cambia questo valore a piacere */
+  width: 100%;
+  object-fit: cover;  /* taglia i bordi senza distorcere */
+  object-position: center;  /* centra il crop */
+}
