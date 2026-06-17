@@ -3,14 +3,24 @@ layout: home
 title: Stratus Lab
 image:
   path: /images/hero.jpg
-  caption: "Stratus Lab - Università di Messina"
 ---
 
 <style>
 .entry-feature-image {
   max-height: 350px;
+  width: 100%;
   object-fit: cover;
   object-position: center;
+  display: block;
+}
+
+.page-image {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+article.page {
+  padding-top: 0 !important;
 }
 
 .page-content p {
