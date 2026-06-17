@@ -1,6 +1,6 @@
-from pybtex.database import parse_file
-from pybtex.database import PybtexError
+from pybtex.database import parse_string, PybtexError
 import sys
+from collections import defaultdict
 
 BIB_FILE = "_data/publications.bib"
 MD_FILE = "publications.md"
@@ -58,8 +58,32 @@ permalink: /publications/
 
 """
 
+# Leggi il file .bib come testo e rinomina le chiavi duplicate
+with open(BIB_FILE, "r", encoding="utf-8") as f:
+    bib_text = f.read()
+
+# Rinomina chiavi duplicate aggiungendo suffisso _b, _c, ecc.
+seen_keys = {}
+cleaned_lines = []
+
+for line in bib_text.splitlines():
+    stripped = line.strip()
+    if stripped.startswith("@") and "{" in stripped:
+        key = stripped.split("{")[1].rstrip(",").strip()
+        if key in seen_keys:
+            seen_keys[key] += 1
+            suffix = chr(ord('a') + seen_keys[key])
+            new_key = f"{key}_{suffix}"
+            print(f"Warning: duplicate key '{key}' renamed to '{new_key}'")
+            line = line.replace("{" + key, "{" + new_key, 1)
+        else:
+            seen_keys[key] = 0
+    cleaned_lines.append(line)
+
+cleaned_bib = "\n".join(cleaned_lines)
+
 try:
-    bib_data = parse_file(BIB_FILE)
+    bib_data = parse_string(cleaned_bib, bib_format="bibtex")
 except PybtexError as e:
     print(f"Error parsing BibTeX file: {e}")
     sys.exit(1)
@@ -72,7 +96,6 @@ entries = sorted(
 )
 
 # Group by year
-from collections import defaultdict
 by_year = defaultdict(list)
 for entry in entries:
     year = entry.fields.get("year", "Unknown")
@@ -85,10 +108,8 @@ for year in sorted(by_year.keys(), reverse=True):
     for entry in by_year[year]:
         fields = entry.fields
 
-        # Title
         title = fields.get("title", "Untitled").replace("{", "").replace("}", "")
 
-        # Authors
         try:
             authors = entry.persons.get("author", [])
             author_str = ", ".join(
@@ -101,7 +122,6 @@ for year in sorted(by_year.keys(), reverse=True):
         except Exception:
             author_str = fields.get("author", "")
 
-        # Venue
         venue = (
             fields.get("journal") or
             fields.get("booktitle") or
@@ -109,7 +129,6 @@ for year in sorted(by_year.keys(), reverse=True):
             ""
         ).replace("{", "").replace("}", "")
 
-        # URL/DOI
         url = fields.get("url", "") or fields.get("doi", "")
         if url and url.startswith("10."):
             url = f"https://doi.org/{url}"
