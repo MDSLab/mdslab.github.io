@@ -1,9 +1,6 @@
 ---
 layout: home
 title: Stratus Lab
-image:
-  path: /images/hero.jpg
-  caption: "Stratus Lab - Università di Messina"
 ---
 
 The **STRATUS LAB** research group at the Department of Engineering of the University of Messina collaborates on projects in Artificial Intelligence, Large Language Models, IoT, Cybersecurity, and numerical optimization, with a focus on industrial, educational, and technological applications.
