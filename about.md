@@ -62,7 +62,7 @@ Stratus Lab is a research laboratory at the University of Messina focused on dev
 
   <div class="research-item">
     <div class="research-header">
-      <i class="fas fa-robot"></i>
+      <i class="fas fa-brain"></i>
       <h3>AI, Robotics &amp; Automation</h3>
     </div>
     <p>We develop intelligent algorithms and advanced machine learning models to create autonomous systems capable of learning, adapting, and optimizing complex decision-making processes, from autonomous driving to industrial automation.</p>
