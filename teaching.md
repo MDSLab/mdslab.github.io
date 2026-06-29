@@ -96,18 +96,7 @@ permalink: /teaching/
     <div class="course-professor"><i class="fas fa-user"></i> Prof. Francesco Longo</div>
   </div>
 
-  <div class="course-card">
-    <div class="course-title">Programmazione ad Oggetti</div>
-    <span class="course-badge">Bachelor's Degree</span>
-    <div class="course-degree">Bachelor's Degree Programme in <span>"Ingegneria Elettronica ed Informatica"</span></div>
-    <div class="course-professor"><i class="fas fa-user"></i> Prof. Giovanni Merlino</div>
-  </div>
 
-  <div class="course-card">
-    <div class="course-title">Industrial IoT</div>
-    <span class="course-badge">Master's Degree</span>
-    <div class="course-degree">Master's Degree Programme in <span>"Engineering in Computer Science"</span></div>
-    <div class="course-professor"><i class="fas fa-user"></i> Prof. Giovanni Merlino</div>
-  </div>
+
 
 </div>
