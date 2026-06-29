@@ -1,0 +1,29 @@
+---
+---
+
+.entry-feature-image {
+  max-height: 350px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Rimuove l'animazione della navbar che scende dall'alto */
+.masthead {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+  top: 0 !important;
+}
+
+.navigation-wrapper {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+* {
+  animation-duration: 0s !important;
+  transition-duration: 0s !important;
+}
