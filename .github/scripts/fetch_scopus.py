@@ -1,15 +1,13 @@
 import requests
 import os
 import sys
-from collections import defaultdict
 
 API_KEY = os.environ.get("SCOPUS_API_KEY", "")
 if not API_KEY:
     print("Error: SCOPUS_API_KEY environment variable not set.")
     sys.exit(1)
 
-# Query diretta con gli AU-ID in OR come su Scopus web
-QUERY = "AU-ID(34868328300) OR AU-ID(59757039100) OR AU-ID(60225938900) OR AU-ID(60097846900) OR ORCID(0009-0006-2908-1475)"
+QUERY = "AU-ID(34868328300) OR AU-ID(59757039100) OR AU-ID(60225938300) OR AU-ID(60097846900) OR ORCID(0009-0006-2908-1475)"
 
 BIB_FILE = "_data/publications.bib"
 
@@ -47,6 +45,46 @@ def fetch_all(query):
             break
     return results
 
+def get_authors(entry):
+    """Estrae tutti gli autori dall'entry, provando i vari formati dell'API."""
+    creator = entry.get("dc:creator", "Unknown")
+
+    # 1) Campo "author" (lista di dict con surname/given-name)
+    authors_raw = entry.get("author", [])
+    if isinstance(authors_raw, list) and authors_raw:
+        names = []
+        for a in authors_raw:
+            if isinstance(a, dict):
+                surname = a.get("surname", "")
+                given = a.get("given-name", "") or a.get("initials", "")
+                if surname:
+                    names.append(f"{surname}, {given}".strip().rstrip(","))
+                elif a.get("authname"):
+                    names.append(a.get("authname"))
+        if names:
+            return " and ".join(names)
+
+    # 2) Campo "authname" (puo' essere lista di dict {"$": "Nome"} o lista di stringhe)
+    authnames = entry.get("authname", [])
+    if isinstance(authnames, list) and authnames:
+        names = []
+        for a in authnames:
+            if isinstance(a, dict):
+                val = a.get("$", "")
+                if val:
+                    names.append(val)
+            elif isinstance(a, str):
+                names.append(a)
+        if names:
+            return " and ".join(names)
+    elif isinstance(authnames, dict):
+        val = authnames.get("$", "")
+        if val:
+            return val
+
+    # 3) Fallback: solo il creator
+    return creator
+
 def entry_to_bibtex(entry, seen_keys):
     title = entry.get("dc:title", "Unknown Title")
     creator = entry.get("dc:creator", "Unknown")
@@ -59,19 +97,7 @@ def entry_to_bibtex(entry, seen_keys):
     volume = entry.get("volume", "")
     issue = entry.get("issue", "")
 
-    authors_raw = entry.get("author", [])
-    authnames = entry.get("authname", [])
-    if authors_raw and isinstance(authors_raw, list) and len(authors_raw) > 0 and authors_raw[0].get("surname"):
-        author_str = " and ".join(
-            f"{a.get('surname', '')}, {a.get('given-name', '')}"
-            for a in authors_raw
-        )
-    elif authnames and isinstance(authnames, list):
-        author_str = ", ".join(
-            a.get("$", "") for a in authnames if a.get("$")
-        )
-    else:
-        author_str = creator
+    author_str = get_authors(entry)
 
     first_last = creator.split(",")[0].strip().replace(" ", "")
     key_base = f"{first_last}{year}"
