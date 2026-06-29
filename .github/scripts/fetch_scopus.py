@@ -26,7 +26,7 @@ def fetch_all(query):
             "query": query,
             "count": count,
             "start": start,
-            "field": "dc:identifier,dc:title,dc:creator,prism:publicationName,prism:coverDate,prism:doi,subtypeDescription,prism:pageRange,volume,issue,author,authname",
+            "view": "COMPLETE",
         }
         r = requests.get(url, headers=HEADERS, params=params)
         print(f"  Request start={start}: HTTP {r.status_code}")
