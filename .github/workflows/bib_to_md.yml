@@ -1,0 +1,36 @@
+name: Convert BibTeX to Markdown
+
+on:
+  push:
+    paths:
+      - '_data/publications.bib'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install pybtex
+        run: pip install pybtex
+
+      - name: Convert BibTeX to Markdown
+        run: python .github/scripts/bib_to_md.py
+
+      - name: Commit and push publications.md
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add publications.md
+          git diff --staged --quiet || git commit -m "Auto-update publications.md from BibTeX"
+          git push
