@@ -3,22 +3,13 @@ import os
 import sys
 from collections import defaultdict
 
-# ── Configurazione ─────────────────────────────────────────────────────────────
 API_KEY = os.environ.get("SCOPUS_API_KEY", "")
 if not API_KEY:
     print("Error: SCOPUS_API_KEY environment variable not set.")
     sys.exit(1)
 
-# Author IDs e ORCID del lab
-AUTHOR_IDS = [
-    "34868328300",
-    "59757039100",
-    "60225938900",
-    "60097846900",
-]
-ORCID_IDS = [
-    "0009-0006-2908-1475",
-]
+# Query diretta con gli AU-ID in OR come su Scopus web
+QUERY = "AU-ID(34868328300) OR AU-ID(59757039100) OR AU-ID(60225938900) OR AU-ID(60097846900) OR ORCID(0009-0006-2908-1475)"
 
 BIB_FILE = "_data/publications.bib"
 
@@ -27,24 +18,22 @@ HEADERS = {
     "Accept": "application/json",
 }
 
-# ── Funzioni ────────────────────────────────────────────────────────────────────
-
-def search_by_author_id(author_id):
-    """Cerca tutti i paper di un autore tramite AU-ID."""
+def fetch_all(query):
     url = "https://api.elsevier.com/content/search/scopus"
-    params = {
-        "query": f"AU-ID({author_id})",
-        "count": 200,
-        "field": "dc:identifier,dc:title,dc:creator,prism:publicationName,prism:coverDate,prism:doi,prism:issn,citedby-count,subtypeDescription,prism:pageRange,volume,issue,authkeywords,author",
-        "sort": "coverDate",
-    }
     results = []
     start = 0
+    count = 25
     while True:
-        params["start"] = start
+        params = {
+            "query": query,
+            "count": count,
+            "start": start,
+            "field": "dc:identifier,dc:title,dc:creator,prism:publicationName,prism:coverDate,prism:doi,subtypeDescription,prism:pageRange,volume,issue,author",
+        }
         r = requests.get(url, headers=HEADERS, params=params)
+        print(f"  Request start={start}: HTTP {r.status_code}")
         if r.status_code != 200:
-            print(f"Warning: API error for AU-ID {author_id}: {r.status_code}")
+            print(f"  Response: {r.text[:300]}")
             break
         data = r.json()
         entries = data.get("search-results", {}).get("entry", [])
@@ -52,34 +41,13 @@ def search_by_author_id(author_id):
             break
         results.extend(entries)
         total = int(data["search-results"].get("opensearch:totalResults", 0))
+        print(f"  Got {len(entries)} entries, total={total}")
         start += len(entries)
         if start >= total:
             break
-    print(f"  AU-ID {author_id}: {len(results)} papers found.")
     return results
 
-def search_by_orcid(orcid):
-    """Cerca tutti i paper di un autore tramite ORCID."""
-    url = "https://api.elsevier.com/content/search/scopus"
-    params = {
-        "query": f"ORCID({orcid})",
-        "count": 200,
-        "field": "dc:identifier,dc:title,dc:creator,prism:publicationName,prism:coverDate,prism:doi,prism:issn,citedby-count,subtypeDescription,prism:pageRange,volume,issue,authkeywords,author",
-        "sort": "coverDate",
-    }
-    r = requests.get(url, headers=HEADERS, params=params)
-    if r.status_code != 200:
-        print(f"Warning: API error for ORCID {orcid}: {r.status_code}")
-        return []
-    data = r.json()
-    entries = data.get("search-results", {}).get("entry", [])
-    if not entries or entries[0].get("error"):
-        return []
-    print(f"  ORCID {orcid}: {len(entries)} papers found.")
-    return entries
-
 def entry_to_bibtex(entry, seen_keys):
-    """Converte una entry JSON Scopus in formato BibTeX."""
     title = entry.get("dc:title", "Unknown Title")
     creator = entry.get("dc:creator", "Unknown")
     venue = entry.get("prism:publicationName", "")
@@ -91,7 +59,6 @@ def entry_to_bibtex(entry, seen_keys):
     volume = entry.get("volume", "")
     issue = entry.get("issue", "")
 
-    # Recupera tutti gli autori
     authors_raw = entry.get("author", [])
     if authors_raw:
         author_str = " and ".join(
@@ -101,7 +68,6 @@ def entry_to_bibtex(entry, seen_keys):
     else:
         author_str = creator
 
-    # Genera chiave BibTeX
     first_last = creator.split(",")[0].strip().replace(" ", "")
     key_base = f"{first_last}{year}"
     key = key_base
@@ -111,7 +77,6 @@ def entry_to_bibtex(entry, seen_keys):
         key = f"{key_base}_{chr(ord('a') + suffix_num - 1)}"
     seen_keys.add(key)
 
-    # Tipo BibTeX
     if "Conference" in subtype or "Proceeding" in subtype:
         bib_type = "inproceedings"
         venue_field = f"  booktitle = {{{venue}}},"
@@ -136,48 +101,19 @@ def entry_to_bibtex(entry, seen_keys):
     bib += "}\n"
     return key, bib
 
-# ── Main ────────────────────────────────────────────────────────────────────────
-
 print("Fetching papers from Scopus...")
-
-all_entries = []
-seen_scopus_ids = set()
-
-for aid in AUTHOR_IDS:
-    entries = search_by_author_id(aid)
-    for e in entries:
-        sid = e.get("dc:identifier", "")
-        if sid and sid not in seen_scopus_ids:
-            seen_scopus_ids.add(sid)
-            all_entries.append(e)
-
-for orcid in ORCID_IDS:
-    entries = search_by_orcid(orcid)
-    for e in entries:
-        sid = e.get("dc:identifier", "")
-        if sid and sid not in seen_scopus_ids:
-            seen_scopus_ids.add(sid)
-            all_entries.append(e)
-
+all_entries = fetch_all(QUERY)
 print(f"\nTotal unique papers: {len(all_entries)}")
 
-# Ordina per anno decrescente
-all_entries.sort(
-    key=lambda e: e.get("prism:coverDate", "0000-01-01"),
-    reverse=True
-)
-
-# Converti in BibTeX
 seen_keys = set()
 bib_output = ""
-for entry in all_entries:
+for entry in sorted(all_entries, key=lambda e: e.get("prism:coverDate", "0000"), reverse=True):
     try:
         key, bib = entry_to_bibtex(entry, seen_keys)
         bib_output += bib + "\n"
     except Exception as ex:
         print(f"Warning: skipping entry due to error: {ex}")
 
-# Scrivi file
 with open(BIB_FILE, "w", encoding="utf-8") as f:
     f.write(bib_output)
 
