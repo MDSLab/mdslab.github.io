@@ -288,14 +288,14 @@ permalink: /publications/
     <div class="pub-venue">Proceedings 2022 IEEE International Conference on Smart Computing Smartcomp 2022<span class="pub-year">2022</span></div>
   </li>
   <li class="pub-item">
-    <div class="pub-title"><a href="https://doi.org/10.1109/ICCCN54977.2022.9868902" target="_blank">Interfacing Intelligent Personal Assistant to SDI/O with one click</a></div>
-    <div class="pub-authors">Tricomi G.</div>
-    <div class="pub-venue">Proceedings International Conference on Computer Communications and Networks ICCCN<span class="pub-year">2022</span></div>
-  </li>
-  <li class="pub-item">
     <div class="pub-title"><a href="https://doi.org/10.1109/SMARTCOMP55677.2022.00073" target="_blank">3D Marketplace: Distributed Attestation of 3D Designs on Blockchain</a></div>
     <div class="pub-authors">Tapas N.</div>
     <div class="pub-venue">Proceedings 2022 IEEE International Conference on Smart Computing Smartcomp 2022<span class="pub-year">2022</span></div>
+  </li>
+  <li class="pub-item">
+    <div class="pub-title"><a href="https://doi.org/10.1109/ICCCN54977.2022.9868902" target="_blank">Interfacing Intelligent Personal Assistant to SDI/O with one click</a></div>
+    <div class="pub-authors">Tricomi G.</div>
+    <div class="pub-venue">Proceedings International Conference on Computer Communications and Networks ICCCN<span class="pub-year">2022</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://doi.org/10.1109/ISC255366.2022.9922581" target="_blank">Traffic Condition Estimation at the Smart City Edge using Deep Learning: A Ro-Pax Terminal Case Study</a></div>
