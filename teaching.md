@@ -84,7 +84,7 @@ permalink: /teaching/
     <div class="course-title">Course Title</div>
     <span class="course-badge">Bachelor's Degree</span>
     <div class="course-degree">Degree Programme in </div>
-    <div class="course-professor"><i class="fas fa-user"></i> Prof. Francesco Longo</div>
+    <div class="course-professor"><i class="fas fa-user"></i> Prof. </div>
   </a>
 
 
