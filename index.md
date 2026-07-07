@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Stratus Lab
+title: MDSLab
 image:
   path: /images/hero.jpg
 ---
@@ -67,25 +67,11 @@ image:
 }
 </style>
 
-The **STRATUS LAB** research group at the Department of Engineering of the University of Messina collaborates on projects in Artificial Intelligence, Large Language Models, IoT, Cybersecurity, and numerical optimization, with a focus on industrial, educational, and technological applications.
-
-The main research lines include: the use of LLMs for personalized virtual tutors in local schools and for vehicle control via textual prompts; the development of route optimization algorithms in collaboration with a Milan-based delivery company; and participation in the Zancle E-Drive project for the development of an autonomous electric car for Formula Student.
-
-The lab also manages a cybersecurity hacklab that participates annually in CyberChallenge.IT and other competitions.
-
-The group collaborates with national and international institutions including STMicroelectronics, CNR, SERICS, CINI, Northeastern University, ETH Zurich, and NVIDIA.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis magna sit amet convallis facilisis. Duis bibendum pharetra bibendum. Sed dapibus quam rutrum nibh euismod eleifend vitae nec eros. Vivamus quis efficitur justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum at pharetra elit. Donec bibendum justo a auctor pretium. Nulla a est tortor. Aliquam erat volutpat. Nam sapien dui, lacinia at purus in, iaculis tincidunt urna. Donec quis felis sit amet ex pretium cursus. Donec mattis tincidunt fringilla. Aliquam ex felis, efficitur quis leo finibus, tempus mattis arcu. Etiam ut nunc at ante elementum vulputate. 
 
 ---
 
 <div class="partners-section">
   <h3>Our Partners</h3>
-  <div class="partners-grid">
-    <img src="/images/ST.png" alt="STMicroelectronics">
-    <img src="/images/CNR.png" alt="CNR">
-    <img src="/images/Serics.png" alt="SERICS">
-    <img src="/images/CINI.png" alt="CINI">
-    <img src="/images/NE.png" alt="Northeastern University">
-    <img src="/images/ETH.png" alt="ETH Zurich">
-    <img src="/images/NVIDIA.png" alt="NVIDIA">
-  </div>
+  
 </div>
