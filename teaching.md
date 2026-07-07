@@ -81,25 +81,12 @@ permalink: /teaching/
 <div class="teaching-grid">
 
   <a class="course-card" href="/teaching/fondamenti-di-informatica/">
-    <div class="course-title">Fondamenti di Informatica</div>
+    <div class="course-title">Course Title</div>
     <span class="course-badge">Bachelor's Degree</span>
-    <div class="course-degree">Bachelor's Degree Programme in <span>"Ingegneria Elettronica ed Informatica"</span></div>
+    <div class="course-degree">Degree Programme in </div>
     <div class="course-professor"><i class="fas fa-user"></i> Prof. Francesco Longo</div>
   </a>
 
-  <a class="course-card" href="/teaching/cybersecurity/">
-    <div class="course-title">CyberSecurity</div>
-    <span class="course-badge">Master's Degree</span>
-    <div class="course-degree">Master's Degree Programme in <span>"Engineering in Computer Science"</span></div>
-    <div class="course-professor"><i class="fas fa-user"></i> Prof. Francesco Longo</div>
-  </a>
-
-  <a class="course-card" href="/teaching/embedded-systems/">
-    <div class="course-title">Embedded Systems</div>
-    <span class="course-badge">Master's Degree</span>
-    <div class="course-degree">Master's Degree Programme in <span>"Engineering in Computer Science"</span></div>
-    <div class="course-professor"><i class="fas fa-user"></i> Prof. Francesco Longo</div>
-  </a>
 
 
 
