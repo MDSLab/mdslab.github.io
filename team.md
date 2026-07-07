@@ -76,21 +76,6 @@ permalink: /team/
   <h2>Professors</h2>
   <div class="people-grid">
 
-    <div class="person-card">
-      <div class="img-circle">
-        <img src="/images/people/Longo.png" alt="Prof. Francesco Longo">
-      </div>
-      <span class="person-name">Prof. Francesco Longo</span>
-      <span class="person-role">Associate professor</span>
-    </div>
-
-    <div class="person-card">
-      <div class="img-circle">
-        <img src="/images/people/Merlino.png" alt="Prof. Giovanni Merlino">
-      </div>
-      <span class="person-name">Prof. Giovanni Merlino</span>
-      <span class="person-role">Associate professor</span>
-    </div>
 
   </div>
 </div>
@@ -99,37 +84,6 @@ permalink: /team/
   <h2>Researchers & PhD Students</h2>
   <div class="people-grid">
 
-    <div class="person-card">
-      <div class="img-circle">
-        <img src="/images/people/Fabiano.png" alt="Doct. Manuel Fabiano">
-      </div>
-      <span class="person-name">Doct. Manuel Fabiano</span>
-      <span class="person-role">PhD Student</span>
-    </div>
-
-    <div class="person-card">
-      <div class="img-circle">
-        <img src="/images/people/Bucaria.png" alt="Doct. Vincenzo Bucaria">
-      </div>
-      <span class="person-name">Doct. Vincenzo Bucaria</span>
-      <span class="person-role">PhD Student</span>
-    </div>
-
-    <div class="person-card">
-      <div class="img-circle">
-        <img src="/images/people/Lombardo.png" alt="Doct. Giovanni Lombardo">
-      </div>
-      <span class="person-name">Doct. Giovanni Lombardo</span>
-      <span class="person-role">PhD Student</span>
-    </div>
-
-    <div class="person-card">
-      <div class="img-circle">
-        <img src="/images/people/Pispisa.png" alt="Doct. Gaetano Pio Pispisa" style="object-position: 75% top !important;">
-      </div>
-      <span class="person-name">Doct. Gaetano Pio Pispisa</span>
-      <span class="person-role">PhD Student</span>
-    </div>
-
+   
   </div>
 </div>
