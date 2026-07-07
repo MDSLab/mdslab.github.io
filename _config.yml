@@ -7,9 +7,9 @@ plugins:
 
 
 locale: it-IT
-title: Stratus Lab Unime
-description: Secure TRustless Autonomous Technologies for Ubiquitous Systems Lab
-url: "https://stratus-lab-unime.github.io"
+title: MDSLab Unime
+description: Mobile and Distributed Systems Laboratory
+url: "https://github.com/MDSLab/mdslab.github.io"
 baseurl: ""
 skin: "/assets/css/skins/default.css"
 
@@ -17,13 +17,13 @@ paginate: 5
 paginate_path: /page:num/
 
 author:
-  name: "Stratus Lab"
-  bio: "Stratus Lab Unime"
+  name: "MDSLab"
+  bio: "MDSLab Unime"
 
 # Footer
 footer_links:
   - title: GitHub
-    url: https://github.com/Stratus-Lab-Unime
+    url: https://github.com/MDSLab/mdslab.github.io
     icon: fab fa-github-square
 
 after_footer_scripts:
