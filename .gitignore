@@ -1,0 +1,22 @@
+_site/
+.bundle/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
+
+# prodotti di _modelli-tesi: i file buoni stanno in teaching/thesis/
+_modelli-tesi/__pycache__/
+_modelli-tesi/*.docx
+_modelli-tesi/*.pdf
+_modelli-tesi/latex-*/tesi.pdf
+_modelli-tesi/latex-*/*.aux
+_modelli-tesi/latex-*/*.log
+_modelli-tesi/latex-*/*.toc
+_modelli-tesi/latex-*/*.lof
+_modelli-tesi/latex-*/*.lot
+_modelli-tesi/latex-*/*.bbl
+_modelli-tesi/latex-*/*.blg
+_modelli-tesi/latex-*/*.out
+
+# La cache delle tessere satellitari, scaricabile quando serve
+.github/scripts/tessere/

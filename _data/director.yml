@@ -1,0 +1,12 @@
+# Chi guida il laboratorio. Stessa struttura di people.yml, ma reso in cima
+# alla pagina Team con foto grande e bio accanto, non in una scheda a comparsa.
+# Finché `name` è vuoto il riquadro non compare.
+#
+# TODO: compilare.
+
+name: ""
+role: Lab Director
+photo: ""
+bio: ""
+links:
+  email: ""

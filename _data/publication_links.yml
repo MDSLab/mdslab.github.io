@@ -1,0 +1,31 @@
+# Collegamenti per le pubblicazioni che Scopus restituisce senza DOI.
+# Sono quasi tutte negli atti CEUR, che per scelta editoriale non assegnano DOI
+# ma pubblicano il PDF su ceur-ws.org: quello è il loro editore, quindi il link
+# punta lì esattamente come gli altri puntano alla pagina dell'editore.
+#
+# Questo file è separato da publications.bib perché fetch_scopus.py rigenera il
+# .bib da zero a ogni esecuzione e cancellerebbe qualsiasi aggiunta manuale.
+# La corrispondenza avviene sul titolo, ignorando punteggiatura e maiuscole.
+
+- title: "Zero-Trust Software-Defined Vehicles: a Security Paradigm for the Automotive Cloud-Edge Continuum"
+  url: https://ceur-ws.org/Vol-4198/paper67.pdf
+
+- title: "Automatic Verification of Security Properties in Containerized IoT Applications via Bigraphical Modeling"
+  url: https://ceur-ws.org/Vol-4198/paper59.pdf
+
+- title: "A Survey of WebAssembly Usage for Embedded Applications: Safety and Portability Considerations"
+  url: https://ceur-ws.org/Vol-3962/paper65.pdf
+
+# Primo autore è Carmelo Fabio Longo (Catania), persona diversa da Francesco Longo,
+# che qui è secondo autore.
+- title: "A reactive cognitive architecture based on natural language processing for the task of decision-making using a rich semantic"
+  url: https://ceur-ws.org/Vol-2706/paper2.pdf
+
+# Non è CEUR: gli atti IMEKO sono pubblicati sul sito dell'associazione.
+- title: "A new Fog-enabled Wireless Sensor Network architecture for Industrial Internet of Things applications"
+  url: https://www.imeko.org/publications/tc4-2020/IMEKO-TC4-2020-34.pdf
+
+# Non è un articolo ma la prefazione degli atti di EPEW 2023 e ASMTA 2023
+# (LNCS 14231), che Longo ha co-curato. Materiale redazionale: fuori dall'elenco.
+- title: "Preface"
+  exclude: true

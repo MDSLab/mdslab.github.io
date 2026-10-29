@@ -5,47 +5,33 @@ permalink: /publications/
 ---
 
 <style>
+/* Colori, riquadri e pillole stanno in /assets/css/mdslab.css */
 .pub-list {
   list-style: none;
   padding: 0;
 }
 
 .pub-item {
-  border-left: 4px solid #6a0dad;
-  padding: 1em 1.2em;
   margin-bottom: 1.2em;
-  background: #fafafa;
-  border-radius: 0 8px 8px 0;
 }
 
 .pub-title {
-  font-weight: bold;
   font-size: 1em;
-  color: #1a1a2e;
   margin-bottom: 0.3em;
 }
 
 .pub-authors {
   font-size: 0.85em;
-  color: #555;
   margin-bottom: 0.3em;
 }
 
 .pub-venue {
   font-size: 0.85em;
-  color: #888;
   font-style: italic;
 }
 
 .pub-year {
-  display: inline-block;
-  font-size: 0.75em;
-  padding: 0.15em 0.6em;
-  border-radius: 20px;
-  background: #ede7f6;
-  color: #6a0dad;
   margin-left: 0.5em;
-  font-style: normal;
 }
 </style>
 
@@ -53,7 +39,7 @@ permalink: /publications/
 
 <ul class="pub-list">
   <li class="pub-item">
-    <div class="pub-title">Zero-Trust Software-Defined Vehicles: a Security Paradigm for the Automotive Cloud-Edge Continuum</div>
+    <div class="pub-title"><a href="https://ceur-ws.org/Vol-4198/paper67.pdf" target="_blank">Zero-Trust Software-Defined Vehicles: a Security Paradigm for the Automotive Cloud-Edge Continuum</a></div>
     <div class="pub-authors">Giovanni Lombardo, Vincenzo Alessio Bucaria, Giovanni Merlino, Francesco Longo</div>
     <div class="pub-venue">CEUR Workshop Proceedings<span class="pub-year">2026</span></div>
   </li>
@@ -63,7 +49,7 @@ permalink: /publications/
     <div class="pub-venue">IEEE Access<span class="pub-year">2026</span></div>
   </li>
   <li class="pub-item">
-    <div class="pub-title">Automatic Verification of Security Properties in Containerized IoT Applications via Bigraphical Modeling</div>
+    <div class="pub-title"><a href="https://ceur-ws.org/Vol-4198/paper59.pdf" target="_blank">Automatic Verification of Security Properties in Containerized IoT Applications via Bigraphical Modeling</a></div>
     <div class="pub-authors">Cristian Coppo, Francesco Longo, Giovanni Merlino, Antonio Puliafito, Marino Miculan</div>
     <div class="pub-venue">CEUR Workshop Proceedings<span class="pub-year">2026</span></div>
   </li>
@@ -75,7 +61,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/105015865348?origin=resultslist" target="_blank">Autoencoder-Based Detection of Physical-Layer Anomalies in Automotive CAN Networks</a></div>
     <div class="pub-authors">Antonio Battaglia, Nicasio Canino, Pierpaolo Dini, Giovanni Lombardo, Francesco Longo, Daniele Rossi</div>
-    <div class="pub-venue">Proceedings - 2025 IEEE 31st International Symposium on On-Line Testing and Robust System Design, IOLTS 2025<span class="pub-year">2025</span></div>
+    <div class="pub-venue">Proceedings - 2025 IEEE 31st International Symposium on On-Line Testing and Robust System Design, IOLTS<span class="pub-year">2025</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/105013740408?origin=resultslist" target="_blank">Securing Modbus in legacy industrial control systems: A decentralized approach using proxies, Post-Quantum Cryptography and Self-Sovereign Identity</a></div>
@@ -85,12 +71,12 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/105010817146?origin=resultslist" target="_blank">IoT Orchestration in the Compute Continuum: Integrating Kubernetes with Stack4Things</a></div>
     <div class="pub-authors">Luca D'agati, Giuseppe Tricomi, Michele Arena, Francesco Longo, Antonio Puliafito, Giovanni Merlino</div>
-    <div class="pub-venue">Proceedings - 2025 IEEE 25th International Symposium on Cluster, Cloud and Internet Computing Workshops, CCGridW 2025<span class="pub-year">2025</span></div>
+    <div class="pub-venue">Proceedings - 2025 IEEE 25th International Symposium on Cluster, Cloud and Internet Computing Workshops, CCGridW<span class="pub-year">2025</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/105010821075?origin=resultslist" target="_blank">State-Based Modeling and Anomaly Detection in Industrial Systems Using DEVS</a></div>
     <div class="pub-authors">Ghena Barakat, Harshit Gupta, Luca D'agati, Giuseppe Tricomi, Francesco Longo, Giovanni Merlino, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings - 2025 IEEE International Conference on Smart Computing, SMARTCOMP 2025<span class="pub-year">2025</span></div>
+    <div class="pub-venue">Proceedings - 2025 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2025</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/105034153286?origin=resultslist" target="_blank">Machine Learning-Based Band Selection for the Design of a Low-Cost VIS-NIR Microspectrometer for Smart Leaf Nutrient Monitoring</a></div>
@@ -110,22 +96,22 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/105007516110?origin=resultslist" target="_blank">RTHM: Real-Time Hard Timeout Management for Reliable QoS in Industry 4.0 Networks</a></div>
     <div class="pub-authors">Harshit Gupta, Ghena Barakat, Luca D'Agati, Giuseppe Tricomi, Francesco Longo, Giovanni Merlino, Antonio Puliafito</div>
-    <div class="pub-venue">10th International Conference on Wireless Communications, Signal Processing and Networking, WiSPNET 2025<span class="pub-year">2025</span></div>
+    <div class="pub-venue">10th International Conference on Wireless Communications, Signal Processing and Networking, WiSPNET<span class="pub-year">2025</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/105004745215?origin=resultslist" target="_blank">Exploring and Mitigating Gradient Leakage Vulnerabilities in Federated Learning</a></div>
     <div class="pub-authors">Harshit Gupta, Ghena Barakat, Luca D'agati, Francesco Longo, Giovanni Merlino, Antonio Puliafito</div>
-    <div class="pub-venue">2025 IEEE International Conference on Software Testing, Verification and Validation Workshops, ICSTW 2025<span class="pub-year">2025</span></div>
+    <div class="pub-venue">2025 IEEE International Conference on Software Testing, Verification and Validation Workshops, ICSTW<span class="pub-year">2025</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/105015853157?origin=resultslist" target="_blank">Secure and Flexible WebAssembly Deployment Infrastructure for Automotive Cyber-Physical Systems</a></div>
     <div class="pub-authors">Tancredi Orlando, Michele Arena, Luca D'Agati, Giovanni Merlino, Francesco Longo</div>
-    <div class="pub-venue">Proceedings - 2025 IEEE 31st International Symposium on On-Line Testing and Robust System Design, IOLTS 2025<span class="pub-year">2025</span></div>
+    <div class="pub-venue">Proceedings - 2025 IEEE 31st International Symposium on On-Line Testing and Robust System Design, IOLTS<span class="pub-year">2025</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/105010832453?origin=resultslist" target="_blank">Decentralized Traffic Management Through a Hybrid Incremental and Federated Learning Approach</a></div>
     <div class="pub-authors">Ilenia Ficili, Giuseppe Tricomi, Giovanni Cicceri, Francesco Longo, Salvatore Vitabile, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings - 2025 IEEE International Conference on Smart Computing, SMARTCOMP 2025<span class="pub-year">2025</span></div>
+    <div class="pub-venue">Proceedings - 2025 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2025</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/105033602698?origin=resultslist" target="_blank">Leaf Nutrient Retrieval Using Hyperspectral Sensing and Machine Learning</a></div>
@@ -133,14 +119,14 @@ permalink: /publications/
     <div class="pub-venue">International Geoscience and Remote Sensing Symposium (IGARSS)<span class="pub-year">2025</span></div>
   </li>
   <li class="pub-item">
-    <div class="pub-title">A Survey of WebAssembly Usage for Embedded Applications: Safety and Portability Considerations</div>
+    <div class="pub-title"><a href="https://ceur-ws.org/Vol-3962/paper65.pdf" target="_blank">A Survey of WebAssembly Usage for Embedded Applications: Safety and Portability Considerations</a></div>
     <div class="pub-authors">Tancredi Orlando, Luca D’Agati, Francesco Longo, Giovanni Merlino</div>
     <div class="pub-venue">CEUR Workshop Proceedings<span class="pub-year">2025</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/105010831232?origin=resultslist" target="_blank">Reconfigurable Distributed Model Predictive Control for Decentralized IT/OT Systems</a></div>
     <div class="pub-authors">Mohammad Ghavidel Vahid, Rida Maamoor, Luca D'agati, Antonio Puliafito, Francesco Longo, Giovanni Merlino</div>
-    <div class="pub-venue">Proceedings - 2025 IEEE International Conference on Smart Computing, SMARTCOMP 2025<span class="pub-year">2025</span></div>
+    <div class="pub-venue">Proceedings - 2025 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2025</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/105023953799?origin=resultslist" target="_blank">µ-VF: Enabling Virtualization of Embedded FPGAs</a></div>
@@ -160,7 +146,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/105032146689?origin=resultslist" target="_blank">Enhancing Communication in Edge Applications with IoT-Based Overlay Peer-to-Peer Networks</a></div>
     <div class="pub-authors">Marco Garofalo, Giuseppe Tricomi, Luca D'Agati, Zakaria Benomar, Giovanni Merlino, Antonio Puliafito, Francesco Longo</div>
-    <div class="pub-venue">Proceedings - IEEE Congress on Cybermatics, Cybermatics 2025: 2025 IEEE International Conferences on Internet of Things, iThings 2025, IEEE Green Computing and Communications, GreenCom 2025, IEEE Cyber, Physical and Social Computing, CPSCom 2025, IEEE Smart Data, SmartData 2025<span class="pub-year">2025</span></div>
+    <div class="pub-venue">Proceedings - IEEE Congress on Cybermatics, Cybermatics 2025: 2025 IEEE International Conferences on Internet of Things, iThings 2025, IEEE Green Computing and Communications, GreenCom 2025, IEEE Cyber, Physical and Social Computing, CPSCom 2025, IEEE Smart Data, SmartData<span class="pub-year">2025</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/105008990580?origin=resultslist" target="_blank">Polarization in Political Rallies: A Markovian Agent-Based Model for Opinion Dynamics</a></div>
@@ -180,22 +166,22 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85200787112?origin=resultslist" target="_blank">Enhancing UAV Operational Efficiency through Cloud Computing and Autopilot System Integration</a></div>
     <div class="pub-authors">Luca D'Agati, Francesco Longo, Giovanni Merlino, Antonio Puliafito, Giuseppe Tricomi</div>
-    <div class="pub-venue">Proceedings - 2024 IEEE International Conference on Smart Computing, SMARTCOMP 2024<span class="pub-year">2024</span></div>
+    <div class="pub-venue">Proceedings - 2024 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2024</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85200780844?origin=resultslist" target="_blank">Paving the Way for an Urban Intelligence OpenStack-Based Architecture</a></div>
     <div class="pub-authors">Giuseppe Tricomi, Luca D'Agati, Francesco Longo, Giovanni Merlino, Antonio Puliafito, Stefano Silvestri</div>
-    <div class="pub-venue">Proceedings - 2024 IEEE International Conference on Smart Computing, SMARTCOMP 2024<span class="pub-year">2024</span></div>
+    <div class="pub-venue">Proceedings - 2024 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2024</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85217081665?origin=resultslist" target="_blank">On the Way to Distribute Compute Continuum Urban Applications by Deploying Clusters of Drones</a></div>
     <div class="pub-authors">Giuseppe Tricomi, Luca D'Agati, Michele Arena, Francesco Longo, Giovanni Merlino, Antonio Puliafito, Stefano Silvestri</div>
-    <div class="pub-venue">2024 34th International Telecommunication Networks and Applications Conference, ITNAC 2024<span class="pub-year">2024</span></div>
+    <div class="pub-venue">2024 34th International Telecommunication Networks and Applications Conference, ITNAC<span class="pub-year">2024</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/86000027438?origin=resultslist" target="_blank">Operational Technologies in Industrial Control System: Cybersecurity Perspectives and Research Trends</a></div>
     <div class="pub-authors">Harshit Gupta, Luca D'Agati, Francesco Longo, Antonio Puliafito, Giovanni Merlino</div>
-    <div class="pub-venue">2024 17th International Conference on Security of Information and Networks, SIN 2024<span class="pub-year">2024</span></div>
+    <div class="pub-venue">2024 17th International Conference on Security of Information and Networks, SIN<span class="pub-year">2024</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85194219224?origin=resultslist" target="_blank">MocapMe: DeepLabCut-Enhanced Neural Network for Enhanced Markerless Stability in Sit-to-Stand Motion Capture</a></div>
@@ -205,7 +191,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85210593644?origin=resultslist" target="_blank">Bridging IoT Protocols with the Web of Things: A Path to Enhanced Interoperability</a></div>
     <div class="pub-authors">Zakaria Benomar, Marco Garofalo, Nikolaos Georgantas, Francesco Longo, Giovanni Merlino, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings - IEEE Congress on Cybermatics: 2024 IEEE International Conferences on Internet of Things, iThings 2024, IEEE Green Computing and Communications, GreenCom 2024, IEEE Cyber, Physical and Social Computing, CPSCom 2024, IEEE Smart Data, SmartData 2024<span class="pub-year">2024</span></div>
+    <div class="pub-venue">Proceedings - IEEE Congress on Cybermatics: 2024 IEEE International Conferences on Internet of Things, iThings 2024, IEEE Green Computing and Communications, GreenCom 2024, IEEE Cyber, Physical and Social Computing, CPSCom 2024, IEEE Smart Data, SmartData<span class="pub-year">2024</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85213353049?origin=resultslist" target="_blank">Discrete Event Modeling and Simulation Approaches for IIoT</a></div>
@@ -228,11 +214,6 @@ permalink: /publications/
     <div class="pub-venue">International Conference on Cloud Computing and Services Science, CLOSER - Proceedings<span class="pub-year">2023</span></div>
   </li>
   <li class="pub-item">
-    <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85175972404?origin=resultslist" target="_blank">Preface</a></div>
-    <div class="pub-authors">Mauro Iacono, Enrico Barbierato, Davide Cerotti, Marco Scarpa, Salvatore Serrano, Francesco Longo</div>
-    <div class="pub-venue">Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)<span class="pub-year">2023</span></div>
-  </li>
-  <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85148040775?origin=resultslist" target="_blank">A Scalable Opinion Dynamics Model Based on the Markovian Agent Paradigm</a></div>
     <div class="pub-authors">Marco Scarpa, Salvatore Serrano, Francesco Longo</div>
     <div class="pub-venue">Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)<span class="pub-year">2023</span></div>
@@ -250,7 +231,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85169433196?origin=resultslist" target="_blank">3D Printing and Blockchains for an Emergency Response Supply Chain</a></div>
     <div class="pub-authors">Luca D'Agati, Francesco Longo, Giovanni Merlino, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings - 2023 IEEE International Conference on Smart Computing, SMARTCOMP 2023<span class="pub-year">2023</span></div>
+    <div class="pub-venue">Proceedings - 2023 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2023</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85119456832?origin=resultslist" target="_blank">A Resilient Fire Protection System for Software-Defined Factories</a></div>
@@ -275,7 +256,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85136301371?origin=resultslist" target="_blank">On the way to a configurable testbed to support IoT research</a></div>
     <div class="pub-authors">Giuseppe Tricomi, Zakaria Benomar, Francesco Longo, Giovanni Merlino, Antonio Puliafito</div>
-    <div class="pub-venue">2022 IFIP Networking Conference, IFIP Networking 2022<span class="pub-year">2022</span></div>
+    <div class="pub-venue">2022 IFIP Networking Conference, IFIP Networking<span class="pub-year">2022</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85119214175?origin=resultslist" target="_blank">Cloud-based Network Virtualization in IoT with OpenStack</a></div>
@@ -285,7 +266,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85136148221?origin=resultslist" target="_blank">3D Marketplace: Distributed Attestation of 3D Designs on Blockchain</a></div>
     <div class="pub-authors">Nachiket Tapas, Sofia Belikovetsky, Francesco Longo, Antonio Puliafito, Asaf Shabtai, Yuval Elovici</div>
-    <div class="pub-venue">Proceedings - 2022 IEEE International Conference on Smart Computing, SMARTCOMP 2022<span class="pub-year">2022</span></div>
+    <div class="pub-venue">Proceedings - 2022 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2022</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85142119569?origin=resultslist" target="_blank">Traffic Condition Estimation at the Smart City Edge using Deep Learning: A Ro-Pax Terminal Case Study</a></div>
@@ -300,7 +281,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85136103661?origin=resultslist" target="_blank">Managed ELK deployments at the Edge with OpenStack and IoTronic: an italian Smart City case study</a></div>
     <div class="pub-authors">Zakaria Benomar, Luca D'Agati, Francesco Longo, Giovanni Merlino, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings - 2022 IEEE International Conference on Smart Computing, SMARTCOMP 2022<span class="pub-year">2022</span></div>
+    <div class="pub-venue">Proceedings - 2022 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2022</span></div>
   </li>
 </ul>
 
@@ -315,7 +296,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85117588551?origin=resultslist" target="_blank">From Vertical to Horizontal Buildings through IoT and Software Defined Approaches</a></div>
     <div class="pub-authors">Giuseppe Tricomi, Carlo Scaffidi, Giovanni Merlino, Francesco Longo, Salvatore DIstefano, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings - 2021 IEEE International Conference on Smart Computing, SMARTCOMP 2021<span class="pub-year">2021</span></div>
+    <div class="pub-venue">Proceedings - 2021 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2021</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85105002784?origin=resultslist" target="_blank">Blockchain-based bug bounty framework</a></div>
@@ -325,7 +306,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85125951288?origin=resultslist" target="_blank">IoT/Cloud-Powered Crowdsourced Mobility Services for Green Smart Cities</a></div>
     <div class="pub-authors">Luca D'Agati, Zakaria Benomar, Francesco Longo, Giovanni Merlino, Antonio Puliafito, Giuseppe Tricomi</div>
-    <div class="pub-venue">2021 IEEE 20th International Symposium on Network Computing and Applications, NCA 2021<span class="pub-year">2021</span></div>
+    <div class="pub-venue">2021 IEEE 20th International Symposium on Network Computing and Applications, NCA<span class="pub-year">2021</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85107089930?origin=resultslist" target="_blank">Design and evaluation of a fog platform supporting device mobility through container migration</a></div>
@@ -340,17 +321,17 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85117561173?origin=resultslist" target="_blank">BLE-Enabled On-Site Diagnostics for An IoT/Cloud-Controlled Energy Substation</a></div>
     <div class="pub-authors">Luca D'Agati, Francesco Longo, Giovanni Merlino, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings - 2021 IEEE International Conference on Smart Computing, SMARTCOMP 2021<span class="pub-year">2021</span></div>
+    <div class="pub-venue">Proceedings - 2021 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2021</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85117601454?origin=resultslist" target="_blank">DILoCC: An approach for Distributed Incremental Learning across the Computing Continuum</a></div>
     <div class="pub-authors">Giovanni Cicceri, Giuseppe Tricomi, Zakaria Benomar, Francesco Longo, Antonio Puliafito, Giovanni Merlino</div>
-    <div class="pub-venue">Proceedings - 2021 IEEE International Conference on Smart Computing, SMARTCOMP 2021<span class="pub-year">2021</span></div>
+    <div class="pub-venue">Proceedings - 2021 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2021</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85124665726?origin=resultslist" target="_blank">Deviceless: A Serverless Approach for the Internet of Things</a></div>
     <div class="pub-authors">Zakaria Benomar, Francesco Longo, Giovanni Merlino, Antonio Puliafito</div>
-    <div class="pub-venue">2021 ITU Kaleidoscope: Connecting Physical and Virtual Worlds, ITU K 2021<span class="pub-year">2021</span></div>
+    <div class="pub-venue">2021 ITU Kaleidoscope: Connecting Physical and Virtual Worlds, ITU K<span class="pub-year">2021</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85105696232?origin=resultslist" target="_blank">Verifiable and auditable authorizations for smart industries and industrial Internet-of-Things</a></div>
@@ -375,12 +356,12 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85097334874?origin=resultslist" target="_blank">A NodeRED-based dashboard to deploy pipelines on top of IoT infrastructure</a></div>
     <div class="pub-authors">Giuseppe Tricomi, Zakaria Benomar, Francesco Aragona, Giovanni Merlino, Francesco Longo, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings - 2020 IEEE International Conference on Smart Computing, SMARTCOMP 2020<span class="pub-year">2020</span></div>
+    <div class="pub-venue">Proceedings - 2020 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2020</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85097347996?origin=resultslist" target="_blank">Toward a Function-as-a-Service Framework for Genomic Analysis</a></div>
     <div class="pub-authors">Giuseppe Tricomi, Domenico Giosa, Giovanni Merlino, Orazio Romeo, Francesco Longo</div>
-    <div class="pub-venue">Proceedings - 2020 IEEE International Conference on Smart Computing, SMARTCOMP 2020<span class="pub-year">2020</span></div>
+    <div class="pub-venue">Proceedings - 2020 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2020</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85096745217?origin=resultslist" target="_blank">A new fog-enabled wireless sensor network architecture for industrial internet of things applications</a></div>
@@ -390,12 +371,12 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85097349660?origin=resultslist" target="_blank">Fog-Enabled Industrial WSNs to Monitor Asynchronous Electric Motors</a></div>
     <div class="pub-authors">Zakaria Benomar, Giuseppe Campobello, Francesco Longo, Giovanni Merlino, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings - 2020 IEEE International Conference on Smart Computing, SMARTCOMP 2020<span class="pub-year">2020</span></div>
+    <div class="pub-venue">Proceedings - 2020 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2020</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85102167068?origin=resultslist" target="_blank">Enabling Secure RESTful Web Services in IoT using OpenStack</a></div>
     <div class="pub-authors">Zakaria Benomar, Francesco Longo, Giovanni Merlino, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings - 2020 IEEE 17th International Conference on Mobile Ad Hoc and Smart Systems, MASS 2020<span class="pub-year">2020</span></div>
+    <div class="pub-venue">Proceedings - 2020 IEEE 17th International Conference on Mobile Ad Hoc and Smart Systems, MASS<span class="pub-year">2020</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85083409578?origin=resultslist" target="_blank">P4UIoT: Pay-per-piece patch update delivery for IoT using gradual release</a></div>
@@ -405,7 +386,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85099452630?origin=resultslist" target="_blank">A Stack4Things-based Web of Things Architecture</a></div>
     <div class="pub-authors">Zakaria Benomar, Francesco Longo, Giovanni Merlino, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings - IEEE Congress on Cybermatics: 2020 IEEE International Conferences on Internet of Things, iThings 2020, IEEE Green Computing and Communications, GreenCom 2020, IEEE Cyber, Physical and Social Computing, CPSCom 2020 and IEEE Smart Data, SmartData 2020<span class="pub-year">2020</span></div>
+    <div class="pub-venue">Proceedings - IEEE Congress on Cybermatics: 2020 IEEE International Conferences on Internet of Things, iThings 2020, IEEE Green Computing and Communications, GreenCom 2020, IEEE Cyber, Physical and Social Computing, CPSCom 2020 and IEEE Smart Data, SmartData<span class="pub-year">2020</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85101061807?origin=resultslist" target="_blank">Design of a Trustless Smart City system: The #SmartME experiment</a></div>
@@ -430,17 +411,17 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85071685251?origin=resultslist" target="_blank">Toward a Trustless Smart City: The #SmartME Experience</a></div>
     <div class="pub-authors">Abhinav Khare, Giovanni Merlino, Francesco Longo, Antonio Puliafito, Om Prakash Vyas</div>
-    <div class="pub-venue">Proceedings - 2019 IEEE 28th International Conference on Enabling Technologies: Infrastructure for Collaborative Enterprises, WETICE 2019<span class="pub-year">2019</span></div>
+    <div class="pub-venue">Proceedings - 2019 IEEE 28th International Conference on Enabling Technologies: Infrastructure for Collaborative Enterprises, WETICE<span class="pub-year">2019</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85077967556?origin=resultslist" target="_blank">Transparent, Provenance-assured, and Secure Software-as-a-Service</a></div>
     <div class="pub-authors">Nachiket Tapas, Francesco Longo, Giovanni Merlino, Antonio Puliafito</div>
-    <div class="pub-venue">2019 IEEE 18th International Symposium on Network Computing and Applications, NCA 2019<span class="pub-year">2019</span></div>
+    <div class="pub-venue">2019 IEEE 18th International Symposium on Network Computing and Applications, NCA<span class="pub-year">2019</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85074824744?origin=resultslist" target="_blank">Message from the iThings 2019 Program Chairs</a></div>
     <div class="pub-authors">Xianjun Deng, Anu Bourgeois, Francesco Longo</div>
-    <div class="pub-venue">Proceedings - 2019 IEEE International Congress on Cybermatics: 12th IEEE International Conference on Internet of Things, 15th IEEE International Conference on Green Computing and Communications, 12th IEEE International Conference on Cyber, Physical and Social Computing and 5th IEEE International Conference on Smart Data, iThings/GreenCom/CPSCom/SmartData 2019<span class="pub-year">2019</span></div>
+    <div class="pub-venue">Proceedings - 2019 IEEE International Congress on Cybermatics: 12th IEEE International Conference on Internet of Things, 15th IEEE International Conference on Green Computing and Communications, 12th IEEE International Conference on Cyber, Physical and Social Computing and 5th IEEE International Conference on Smart Data, iThings/GreenCom/CPSCom/SmartData<span class="pub-year">2019</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85065737984?origin=resultslist" target="_blank">Guest editors' introduction to the special issue on fog, edge, and cloud integration for smart environments</a></div>
@@ -465,7 +446,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85074870747?origin=resultslist" target="_blank">Enabling container-based fog computing with openstack</a></div>
     <div class="pub-authors">Zakaria Benomar, Francesco Longo, Giovanni Merlino, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings - 2019 IEEE International Congress on Cybermatics: 12th IEEE International Conference on Internet of Things, 15th IEEE International Conference on Green Computing and Communications, 12th IEEE International Conference on Cyber, Physical and Social Computing and 5th IEEE International Conference on Smart Data, iThings/GreenCom/CPSCom/SmartData 2019<span class="pub-year">2019</span></div>
+    <div class="pub-venue">Proceedings - 2019 IEEE International Congress on Cybermatics: 12th IEEE International Conference on Internet of Things, 15th IEEE International Conference on Green Computing and Communications, 12th IEEE International Conference on Cyber, Physical and Social Computing and 5th IEEE International Conference on Smart Data, iThings/GreenCom/CPSCom/SmartData<span class="pub-year">2019</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85072782540?origin=resultslist" target="_blank">Authorization transparency for accountable access to IoT services</a></div>
@@ -475,22 +456,22 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85070916227?origin=resultslist" target="_blank">Blockchain-based publicly verifiable cloud storage</a></div>
     <div class="pub-authors">Nachiket Tapas, Giovanni Merlino, Francesco Longo, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings - 2019 IEEE International Conference on Smart Computing, SMARTCOMP 2019<span class="pub-year">2019</span></div>
+    <div class="pub-venue">Proceedings - 2019 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2019</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85084299771?origin=resultslist" target="_blank">A mininet-based emulated testbed for the I/Ocloud</a></div>
     <div class="pub-authors">Zakaria Benomar, Dario Bruneo, Francesco Longo, Giovanni Merlino, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings - 2019 15th International Conference on Mobile Ad-Hoc and Sensor Networks, MSN 2019<span class="pub-year">2019</span></div>
+    <div class="pub-venue">Proceedings - 2019 15th International Conference on Mobile Ad-Hoc and Sensor Networks, MSN<span class="pub-year">2019</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85070879090?origin=resultslist" target="_blank">Software-defined city infrastructure: A control plane for rewireable smart cities</a></div>
     <div class="pub-authors">Giuseppe Tricomi, Giovanni Merlino, Francesco Longo, Distefano Salvatore, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings - 2019 IEEE International Conference on Smart Computing, SMARTCOMP 2019<span class="pub-year">2019</span></div>
+    <div class="pub-venue">Proceedings - 2019 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2019</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85070893807?origin=resultslist" target="_blank">Towards trustless prediction-as-a-service</a></div>
     <div class="pub-authors">Gautham Santhosh, Fabrizio De Vita, Dario Bruneo, Francesco Longo, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings - 2019 IEEE International Conference on Smart Computing, SMARTCOMP 2019<span class="pub-year">2019</span></div>
+    <div class="pub-venue">Proceedings - 2019 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2019</span></div>
   </li>
 </ul>
 
@@ -505,7 +486,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85065733286?origin=resultslist" target="_blank">Extending openstack for cloud-based networking at the edge</a></div>
     <div class="pub-authors">Zakaria Benomar, Dario Bruneo, Salvatore Distefano, Khalid Elbaamrani, Noureddine Idboufker, Francesco Longo, Giovanni Merlino, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings - IEEE 2018 International Congress on Cybermatics: 2018 IEEE Conferences on Internet of Things, Green Computing and Communications, Cyber, Physical and Social Computing, Smart Data, Blockchain, Computer and Information Technology, iThings/GreenCom/CPSCom/SmartData/Blockchain/CIT 2018<span class="pub-year">2018</span></div>
+    <div class="pub-venue">Proceedings - IEEE 2018 International Congress on Cybermatics: 2018 IEEE Conferences on Internet of Things, Green Computing and Communications, Cyber, Physical and Social Computing, Smart Data, Blockchain, Computer and Information Technology, iThings/GreenCom/CPSCom/SmartData/Blockchain/CIT<span class="pub-year">2018</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85026317817?origin=resultslist" target="_blank">Providing sensor services by data correlation: The #SmartME approach</a></div>
@@ -525,12 +506,12 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85051498294?origin=resultslist" target="_blank">Virtualization and migration at the network edge: An overview</a></div>
     <div class="pub-authors">Carlo Puliafito, Enzo Mingozzi, Carlo Vallati, Francesco Longo, Giovanni Merlino</div>
-    <div class="pub-venue">Proceedings - 2018 IEEE International Conference on Smart Computing, SMARTCOMP 2018<span class="pub-year">2018</span></div>
+    <div class="pub-venue">Proceedings - 2018 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2018</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85051489867?origin=resultslist" target="_blank">Companion fog computing: supporting things mobility through container migration at the edge</a></div>
     <div class="pub-authors">Carlo Puliafito, Enzo Mingozzi, Carlo Vallati, Francesco Longo, Giovanni Merlino</div>
-    <div class="pub-venue">Proceedings - 2018 IEEE International Conference on Smart Computing, SMARTCOMP 2018<span class="pub-year">2018</span></div>
+    <div class="pub-venue">Proceedings - 2018 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2018</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85060018242?origin=resultslist" target="_blank">Reducing Complexity of 3D Indoor Object Detection</a></div>
@@ -545,7 +526,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85056272362?origin=resultslist" target="_blank">Building a smart city service platform in Messina with the #SmartME project</a></div>
     <div class="pub-authors">Dario Bruneo, Sebastiano Chillari, Salvatore DIstefano, Maurzio Giacobbe, Antonino Longo Minnolo, Francesco Longo, Giovanni Merlino, Davide Mulfari, Alfonso Panarello, Giuseppe Patanè, Antonio Puliafito, Carlo Puliafito, Marco Scarpa, Nachiket Tapas, Giancarlo Visalli</div>
-    <div class="pub-venue">Proceedings - 32nd IEEE International Conference on Advanced Information Networking and Applications Workshops, WAINA 2018<span class="pub-year">2018</span></div>
+    <div class="pub-venue">Proceedings - 32nd IEEE International Conference on Advanced Information Networking and Applications Workshops, WAINA<span class="pub-year">2018</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85049578094?origin=resultslist" target="_blank">Metropolitan intelligent surveillance systems for urban areas by harnessing IoT and edge computing paradigms</a></div>
@@ -555,7 +536,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85051495365?origin=resultslist" target="_blank">Blockchain-Based IoT-cloud authorization and delegation</a></div>
     <div class="pub-authors">Nachiket Tapas, Giovanni Merlino, Francesco Longo</div>
-    <div class="pub-venue">Proceedings - 2018 IEEE International Conference on Smart Computing, SMARTCOMP 2018<span class="pub-year">2018</span></div>
+    <div class="pub-venue">Proceedings - 2018 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2018</span></div>
   </li>
 </ul>
 
@@ -575,7 +556,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85023168002?origin=resultslist" target="_blank">Orchestrated Multi-Cloud Application Deployment in OpenStack with TOSCA</a></div>
     <div class="pub-authors">Giuseppe Tricomi, Alfonso Panarello, Giovanni Merlino, Francesco Longo, Dario Bruneo, Antonio Puliafito</div>
-    <div class="pub-venue">2017 IEEE International Conference on Smart Computing, SMARTCOMP 2017<span class="pub-year">2017</span></div>
+    <div class="pub-venue">2017 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2017</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85030154981?origin=resultslist" target="_blank">User-space network tunneling under a mobile platform: A case study for android environments</a></div>
@@ -610,12 +591,12 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85047094836?origin=resultslist" target="_blank">Pushing intelligence to the edge with a stream processing architecture</a></div>
     <div class="pub-authors">Rustem Dautov, Salvatore Distefano, Dario Bruneo, Francesco Longo, Giovani Merlino, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings - 2017 IEEE International Conference on Internet of Things, IEEE Green Computing and Communications, IEEE Cyber, Physical and Social Computing, IEEE Smart Data, iThings-GreenCom-CPSCom-SmartData 2017<span class="pub-year">2017</span></div>
+    <div class="pub-venue">Proceedings - 2017 IEEE International Conference on Internet of Things, IEEE Green Computing and Communications, IEEE Cyber, Physical and Social Computing, IEEE Smart Data, iThings-GreenCom-CPSCom-SmartData<span class="pub-year">2017</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85014231645?origin=resultslist" target="_blank">A Stack4Things-based platform for mobile crowdsensing services</a></div>
     <div class="pub-authors">S. Distefano, A. Puliafito, G. Merlino, F. Longo, D. Bruneo</div>
-    <div class="pub-venue">Proceedings of the 2016 ITU Kaleidoscope Academic Conference: ICTs for a Sustainable World, ITU WT 2016<span class="pub-year">2017</span></div>
+    <div class="pub-venue">Proceedings of the 2016 ITU Kaleidoscope Academic Conference: ICTs for a Sustainable World, ITU WT<span class="pub-year">2017</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85029291785?origin=resultslist" target="_blank">Head in a Cloud: An approach for Arduino YUN virtualization</a></div>
@@ -630,7 +611,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85022325311?origin=resultslist" target="_blank">Extending Bluetooth Low Energy PANs to Smart City Scenarios</a></div>
     <div class="pub-authors">Anup Kiran Bhattacharjee, Dario Bruneo, Salvatore DIstefano, Francesco Longo, Giovanni Merlino, Antonio Puliafito</div>
-    <div class="pub-venue">2017 IEEE International Conference on Smart Computing, SMARTCOMP 2017<span class="pub-year">2017</span></div>
+    <div class="pub-venue">2017 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2017</span></div>
   </li>
 </ul>
 
@@ -645,7 +626,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85015210244?origin=resultslist" target="_blank">IoT-cloud authorization and delegation mechanisms for ubiquitous sensing and actuation</a></div>
     <div class="pub-authors">Dario Bruneo, Salvatore Distefano, Francesco Longo, Giovanni Merlino, Antonio Puliafito</div>
-    <div class="pub-venue">2016 IEEE 3rd World Forum on Internet of Things, WF-IoT 2016<span class="pub-year">2016</span></div>
+    <div class="pub-venue">2016 IEEE 3rd World Forum on Internet of Things, WF-IoT<span class="pub-year">2016</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/84982168597?origin=resultslist" target="_blank">KAOS: A Kinetic Theory Tool for Modeling Complex Social Systems</a></div>
@@ -660,7 +641,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/84983438378?origin=resultslist" target="_blank">Software defined cities: A novel paradigm for smart cities through IoT clouds</a></div>
     <div class="pub-authors">G. Merlino, D. Bruneo, F. Longo, A. Puliafito, S. Distefano</div>
-    <div class="pub-venue">Proceedings - 2015 IEEE 12th International Conference on Ubiquitous Intelligence and Computing, 2015 IEEE 12th International Conference on Advanced and Trusted Computing, 2015 IEEE 15th International Conference on Scalable Computing and Communications, 2015 IEEE International Conference on Cloud and Big Data Computing, 2015 IEEE International Conference on Internet of People and Associated Symposia/Workshops, UIC-ATC-ScalCom-CBDCom-IoP 2015<span class="pub-year">2016</span></div>
+    <div class="pub-venue">Proceedings - 2015 IEEE 12th International Conference on Ubiquitous Intelligence and Computing, 2015 IEEE 12th International Conference on Advanced and Trusted Computing, 2015 IEEE 15th International Conference on Scalable Computing and Communications, 2015 IEEE International Conference on Cloud and Big Data Computing, 2015 IEEE International Conference on Internet of People and Associated Symposia/Workshops, UIC-ATC-ScalCom-CBDCom-IoP<span class="pub-year">2016</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85139158337?origin=resultslist" target="_blank">An Analytical Framework to Deal with Changing Points and Variable Distributions in Quality Assessment</a></div>
@@ -670,12 +651,12 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85006001490?origin=resultslist" target="_blank">Deploying advanced services in the #SmartME infrastructure</a></div>
     <div class="pub-authors">Dario Bruneo, Francesco Longo, Giovanni Merlino, Antonio Puliafito, Salvatore Distefano</div>
-    <div class="pub-venue">2016 IEEE 2nd International Forum on Research and Technologies for Society and Industry Leveraging a Better Tomorrow, RTSI 2016<span class="pub-year">2016</span></div>
+    <div class="pub-venue">2016 IEEE 2nd International Forum on Research and Technologies for Society and Industry Leveraging a Better Tomorrow, RTSI<span class="pub-year">2016</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/84979570937?origin=resultslist" target="_blank">An IoT Testbed for the Software Defined City Vision: The #SmartMe Project</a></div>
     <div class="pub-authors">Dario Bruneo, Salvatore Distefano, Francesco Longo, Giovanni Merlino</div>
-    <div class="pub-venue">2016 IEEE International Conference on Smart Computing, SMARTCOMP 2016<span class="pub-year">2016</span></div>
+    <div class="pub-venue">2016 IEEE International Conference on Smart Computing, SMARTCOMP<span class="pub-year">2016</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85064995304?origin=resultslist" target="_blank">WebSPN: A Flexible Tool for the Analysis of Non-Markovian Stochastic Petri Nets</a></div>
@@ -700,7 +681,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/84960155425?origin=resultslist" target="_blank">Analytical Modeling of Reactive Autonomic Management Techniques in IaaS Clouds</a></div>
     <div class="pub-authors">Dario Bruneo, Francesco Longo, Rahul Ghosh, Marco Scarpa, Antonio Puliafito, Kishor S. Trivedi</div>
-    <div class="pub-venue">Proceedings - 2015 IEEE 8th International Conference on Cloud Computing, CLOUD 2015<span class="pub-year">2015</span></div>
+    <div class="pub-venue">Proceedings - 2015 IEEE 8th International Conference on Cloud Computing, CLOUD<span class="pub-year">2015</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/84928644988?origin=resultslist" target="_blank">Two-layer symbolic representation for stochastic models with phase-type distributed events</a></div>
@@ -715,7 +696,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/84925651440?origin=resultslist" target="_blank">Stack4Things: Integrating IoT with OpenStack in a Smart City context</a></div>
     <div class="pub-authors">Giovanni Merlino, Dario Bruneo, Salvatore Distefano, Francesco Longo, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings of 2014 International Conference on Smart Computing Workshops, SMARTCOMP Workshops 2014<span class="pub-year">2015</span></div>
+    <div class="pub-venue">Proceedings of 2014 International Conference on Smart Computing Workshops, SMARTCOMP Workshops<span class="pub-year">2015</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/84937428490?origin=resultslist" target="_blank">An SRN-based resiliency quantification approach</a></div>
@@ -730,7 +711,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/84960382584?origin=resultslist" target="_blank">A modular approach to collaborative development in an OpenStack testbed</a></div>
     <div class="pub-authors">Dario Bruneo, Francesco Longo, Giovanni Merlino, Nicola Peditto, Carmelo Romeo, Fabio Verboso, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings - IEEE 4th Symposium on Network Cloud Computing and Applications, NCCA 2015<span class="pub-year">2015</span></div>
+    <div class="pub-venue">Proceedings - IEEE 4th Symposium on Network Cloud Computing and Applications, NCCA<span class="pub-year">2015</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/84947982973?origin=resultslist" target="_blank">Cloud-based network virtualization: An IoT use case</a></div>
@@ -740,7 +721,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/84959059371?origin=resultslist" target="_blank">Stack4Things: An OpenStack-Based Framework for IoT</a></div>
     <div class="pub-authors">Francesco Longo, Dario Bruneo, Salvatore Distefano, Giovanni Merlino, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings - 2015 International Conference on Future Internet of Things and Cloud, FiCloud 2015 and 2015 International Conference on Open and Big Data, OBD 2015<span class="pub-year">2015</span></div>
+    <div class="pub-venue">Proceedings - 2015 International Conference on Future Internet of Things and Cloud, FiCloud 2015 and 2015 International Conference on Open and Big Data, OBD<span class="pub-year">2015</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/84940376740?origin=resultslist" target="_blank">Towards the future internet: The RESERVOIR, VISION cloud, and CloudWave experiences</a></div>
@@ -755,7 +736,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/84942574737?origin=resultslist" target="_blank">A framework for the 3-D cloud monitoring based on data stream generation and analysis</a></div>
     <div class="pub-authors">Dario Bruneo, Francesco Longo, Clarissa Cassales Marquezan</div>
-    <div class="pub-venue">Proceedings of the 2015 IFIP/IEEE International Symposium on Integrated Network Management, IM 2015<span class="pub-year">2015</span></div>
+    <div class="pub-venue">Proceedings of the 2015 IFIP/IEEE International Symposium on Integrated Network Management, IM<span class="pub-year">2015</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/84955273627?origin=resultslist" target="_blank">Enabling collaborative development in an open stack testbed: The cloud wave use case</a></div>
@@ -790,7 +771,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/84922823116?origin=resultslist" target="_blank">3-D cloud monitoring: Enabling effective cloud infrastructure and application management</a></div>
     <div class="pub-authors">Clarissa Cassales Marquezan, Dario Bruneo, Francesco Longo, Florian Wessling, Andreas Metzger, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings of the 10th International Conference on Network and Service Management, CNSM 2014<span class="pub-year">2014</span></div>
+    <div class="pub-venue">Proceedings of the 10th International Conference on Network and Service Management, CNSM<span class="pub-year">2014</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/85054748347?origin=resultslist" target="_blank">Performance analysis for large IaaS clouds</a></div>
@@ -805,7 +786,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/84946689379?origin=resultslist" target="_blank">From VISION cloud to cloudwave: Towards the future internet and a new generation of services</a></div>
     <div class="pub-authors">Francesco Longo, Dario Bruneo, Massimo Villari, Antonio Puliafito, Eliot Salant, Yaron Wolfsthal</div>
-    <div class="pub-venue">Proceedings - 2014 International Conference on Intelligent Networking and Collaborative Systems, IEEE INCoS 2014<span class="pub-year">2014</span></div>
+    <div class="pub-venue">Proceedings - 2014 International Conference on Intelligent Networking and Collaborative Systems, IEEE INCoS<span class="pub-year">2014</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/84908199088?origin=resultslist" target="_blank">A simple architecture for secure and private data sharing solutions</a></div>
@@ -850,7 +831,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/84889685098?origin=resultslist" target="_blank">Investigating mobile crowdsensing application performance</a></div>
     <div class="pub-authors">Salvatore Distefano, Francesco Longo, Marco Scarpa</div>
-    <div class="pub-venue">DIVANet 2013 - Proceedings of the 3rd ACM International Symposium on Design and Analysis of Intelligent Vehicular Networks and Applications, Co-located with ACM MSWiM 2013<span class="pub-year">2013</span></div>
+    <div class="pub-venue">DIVANet 2013 - Proceedings of the 3rd ACM International Symposium on Design and Analysis of Intelligent Vehicular Networks and Applications, Co-located with ACM MSWiM<span class="pub-year">2013</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/84883410035?origin=resultslist" target="_blank">Stochastic evaluation of QoS in service-based systems</a></div>
@@ -865,7 +846,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/84893329592?origin=resultslist" target="_blank">Analytical evaluation of resource allocation policies in green IaaS clouds</a></div>
     <div class="pub-authors">Dario Bruneo, Audric Lhoas, Francesco Longo, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings - 2013 IEEE 3rd International Conference on Cloud and Green Computing, CGC 2013 and 2013 IEEE 3rd International Conference on Social Computing and Its Applications, SCA 2013<span class="pub-year">2013</span></div>
+    <div class="pub-venue">Proceedings - 2013 IEEE 3rd International Conference on Cloud and Green Computing, CGC 2013 and 2013 IEEE 3rd International Conference on Social Computing and Its Applications, SCA<span class="pub-year">2013</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/84887062784?origin=resultslist" target="_blank">Modeling and performance analysis of large scale IaaS clouds</a></div>
@@ -935,7 +916,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/77954020712?origin=resultslist" target="_blank">QoS assessment of WS-BPEL processes through non-Markovian stochastic Petri nets</a></div>
     <div class="pub-authors">Dario Bruneo, Salvatore Distefano, Francesco Longo, Marco Scarpa</div>
-    <div class="pub-venue">Proceedings of the 2010 IEEE International Symposium on Parallel and Distributed Processing, IPDPS 2010<span class="pub-year">2010</span></div>
+    <div class="pub-venue">Proceedings of the 2010 IEEE International Symposium on Parallel and Distributed Processing, IPDPS<span class="pub-year">2010</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/77955917215?origin=resultslist" target="_blank">VO-level performance analysis of gLite Grids</a></div>
@@ -950,7 +931,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/78751474054?origin=resultslist" target="_blank">Reliability assessment of wireless sensor nodes with non-linear battery discharge</a></div>
     <div class="pub-authors">Dario Bruneo, Salvatore Distefano, Francesco Longo, Antonio Puliafito, Marco Scarpa</div>
-    <div class="pub-venue">2010 IFIP Wireless Days, WD 2010<span class="pub-year">2010</span></div>
+    <div class="pub-venue">2010 IFIP Wireless Days, WD<span class="pub-year">2010</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/78650560407?origin=resultslist" target="_blank">Availability assessment of HA standby redundant clusters</a></div>
@@ -970,7 +951,7 @@ permalink: /publications/
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/70349805168?origin=resultslist" target="_blank">Experiencing with the cloud over glite</a></div>
     <div class="pub-authors">Carmelo Ragusa, Francesco Longo, Antonio Puliafito</div>
-    <div class="pub-venue">Proceedings of the 2009 ICSE Workshop on Software Engineering Challenges of Cloud Computing, CLOUD 2009<span class="pub-year">2009</span></div>
+    <div class="pub-venue">Proceedings of the 2009 ICSE Workshop on Software Engineering Challenges of Cloud Computing, CLOUD<span class="pub-year">2009</span></div>
   </li>
   <li class="pub-item">
     <div class="pub-title"><a href="https://www.scopus.com/pages/publications/69049095039?origin=resultslist" target="_blank">Applying symbolic techniques to the representation of non-markovian models with continuous ph distributions</a></div>

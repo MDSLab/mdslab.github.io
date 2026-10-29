@@ -1,0 +1,28 @@
+# Membri attuali del gruppo. L'ordine qui è l'ordine mostrato sulla pagina Team.
+# `id` compare nell'indirizzo della scheda: /team/#rossi
+# `role`: "PhD Student" fa comparire la persona anche sulla pagina delle tesi,
+# sotto le aree dei suoi temi.
+# `topics` sono le chiavi di _data/topics.yml: da lì si ricava la riga sotto il
+# nome nella griglia. In alternativa `keywords`, scritte a mano.
+# `photo` vuoto mostra le iniziali. I collegamenti vuoti non vengono mostrati.
+#
+# TODO: inserire i membri. Esempio:
+#
+# - id: rossi
+#   name: Mario Rossi
+#   role: PhD Student
+#   topics:
+#     - edge-computing
+#   photo: /images/people/Rossi.jpg
+#   bio: >-
+#     Mario Rossi works on ...
+#   links:
+#     email: mario.rossi@unime.it
+#     scholar: https://scholar.google.com/citations?user=...
+#     scopus: https://www.scopus.com/authid/detail.uri?authorId=...
+#     orcid: https://orcid.org/...
+#     github: https://github.com/...
+#     linkedin: https://www.linkedin.com/in/...
+#     website: https://...
+
+[]

@@ -1,0 +1,98 @@
+# Le aree di ricerca del laboratorio, nell'ordine in cui compaiono sulle pagine
+# Research e «Fare la tesi in MDSLab».
+#
+# `key` è quello che compare in `area:` dentro topics.yml e in `areas:` dentro
+# projects.yml.
+# `label` è il nome dell'area, che resta in inglese anche sulla pagina italiana.
+# `icon` è il nome dell'icona in _data/icons.yml.
+# `tag` è la forma corta sulle card dei progetti.
+# `thesis: false` toglie l'area dalla pagina delle tesi (resta su Research).
+#
+# OGNI AREA PORTA DUE DESCRIZIONI, perché i due lettori sono diversi.
+# `tagline_*` e `description_*` parlano allo studente che cerca una tesi: dicono
+# in concreto cosa si fa, e stanno in italiano e in inglese perché la pagina
+# «Fare la tesi in MDSLab» esiste in due lingue. Un `description_*` vuoto non
+# viene mostrato.
+# `research_en` parla a chi legge la pagina Research: registro scientifico, solo
+# in inglese, perché quella pagina esiste solo in inglese.
+#
+# I testi `research_en` vengono dalla vecchia pagina About del sito.
+# TODO: scrivere `description_en` e `description_it` per le aree aperte alle tesi.
+#
+# I temi di ciascuna area non stanno qui: stanno in _data/topics.yml, che dice a
+# quale area ciascun tema appartiene.
+
+- key: ai-robotics
+  label: AI, Robotics &amp; Automation
+  icon: cogs
+  tag: AI &amp; Robotics
+  tagline_en: Autonomous systems that learn, adapt and make decisions, from autonomous driving to industrial automation.
+  tagline_it: Sistemi autonomi che imparano, si adattano e prendono decisioni, dalla guida autonoma all'automazione industriale.
+  description_en: ""
+  description_it: ""
+  research_en: >-
+    We develop intelligent algorithms and advanced machine learning models to create
+    autonomous systems capable of learning, adapting, and optimizing complex
+    decision-making processes, from autonomous driving to industrial automation.
+
+- key: cybersecurity
+  label: Cyber Security
+  icon: shield-alt
+  tag: Security
+  tagline_en: Protecting digital infrastructures and critical data against sophisticated threats.
+  tagline_it: Proteggere le infrastrutture digitali e i dati critici dalle minacce più sofisticate.
+  description_en: ""
+  description_it: ""
+  research_en: >-
+    We protect the integrity of digital infrastructures through trustless approaches
+    and proactive defense strategies, ensuring the security of critical data against
+    the most sophisticated cyber threats.
+
+- key: embedded
+  label: Embedded Systems
+  icon: microchip
+  tag: Embedded
+  tagline_en: Real-time systems and complex applications coexisting on a single embedded platform.
+  tagline_it: Sistemi real-time e applicazioni complesse che convivono sulla stessa piattaforma embedded.
+  description_en: ""
+  description_it: ""
+  research_en: >-
+    We implement solutions on embedded hardware and create isolated environments that
+    allow the coexistence of real-time systems and complex applications on a single
+    platform, ensuring robustness and operational flexibility.
+
+- key: iot
+  label: IoT
+  icon: wifi
+  tag: IoT
+  tagline_en: Ecosystems of connected devices that bridge the physical and digital worlds.
+  tagline_it: Ecosistemi di dispositivi connessi che uniscono il mondo fisico e quello digitale.
+  description_en: ""
+  description_it: ""
+  research_en: >-
+    We interconnect the physical and digital worlds by creating ecosystems of
+    intelligent devices that communicate with each other, collecting valuable data for
+    automation and remote monitoring.
+
+- key: cloud
+  label: Cloud
+  icon: cloud
+  tag: Cloud
+  tagline_en: Scalable, secure and resilient virtual infrastructures.
+  tagline_it: Infrastrutture virtuali scalabili, sicure e resilienti.
+  description_en: ""
+  description_it: ""
+  research_en: >-
+    We build scalable, secure, and resilient virtual infrastructures, enabling flexible
+    data management and ubiquitous access to support business growth and research
+    activities.
+
+- key: education
+  label: Education
+  icon: graduation-cap
+  tag: Education
+  thesis: false
+  research_en: >-
+    We transfer strategic skills through excellence training programs, preparing
+    students, professionals, and companies to master emerging technologies and lead
+    innovation into the future.

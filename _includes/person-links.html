@@ -1,0 +1,16 @@
+{%- comment -%}
+Fila di pulsanti verso i profili di una persona.
+L'ordine è fisso e uguale per tutti: prima l'email, poi dal più personale al
+più istituzionale. Le voci assenti nei dati semplicemente non compaiono.
+Uso: {% include person-links.html links=p.links name=p.name %}
+{%- endcomment -%}
+{%- assign L = include.links -%}
+<div class="person-links">
+  {% if L.email %}<a href="mailto:{{ L.email }}" title="Email" aria-label="Write to {{ include.name }}">{% include icon.html name="envelope" %}</a>{% endif %}
+  {% if L.website %}<a href="{{ L.website }}" target="_blank" rel="noopener" title="Website" aria-label="{{ include.name }}: personal page">{% include icon.html name="globe" %}</a>{% endif %}
+  {% if L.scholar %}<a href="{{ L.scholar }}" target="_blank" rel="noopener" title="Google Scholar" aria-label="{{ include.name }}: Google Scholar">{% include icon.html name="graduation-cap" %}</a>{% endif %}
+  {% if L.scopus %}<a href="{{ L.scopus }}" target="_blank" rel="noopener" title="Scopus" aria-label="{{ include.name }}: Scopus">{% include icon.html name="book" %}</a>{% endif %}
+  {% if L.orcid %}<a href="{{ L.orcid }}" target="_blank" rel="noopener" title="ORCID" aria-label="{{ include.name }}: ORCID">{% include icon.html name="id-card" %}</a>{% endif %}
+  {% if L.github %}<a href="{{ L.github }}" target="_blank" rel="noopener" title="GitHub" aria-label="{{ include.name }}: GitHub">{% include icon.html name="github" %}</a>{% endif %}
+  {% if L.linkedin %}<a href="{{ L.linkedin }}" target="_blank" rel="noopener" title="LinkedIn" aria-label="{{ include.name }}: LinkedIn">{% include icon.html name="linkedin" %}</a>{% endif %}
+</div>

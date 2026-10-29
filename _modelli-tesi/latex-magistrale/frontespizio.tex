@@ -1,0 +1,63 @@
+% ---------------------------------------------------------------------------
+% Title page.
+%
+% The same file serves two purposes. When tesi.tex includes it, the block below
+% is skipped, because tesi.tex has already defined those commands. Compiled on
+% its own, it produces a one-page PDF with the title page alone: that is the one
+% to fill in, send in the chat and have the supervisor sign.
+%
+% The data are the same commands either way: if you compile the whole thesis you
+% fill them in in tesi.tex, if you compile this file alone you fill them in here.
+% ---------------------------------------------------------------------------
+\ifdefined\titolotesi\else
+  \documentclass[12pt,a4paper,oneside]{report}
+  \usepackage[T1]{fontenc}
+  \usepackage{mathptmx}
+  \usepackage[utf8]{inputenc}
+  \usepackage[english]{babel}
+  \usepackage[a4paper,margin=3cm]{geometry}
+  \usepackage{graphicx}
+  \usepackage{array}
+  \usepackage{setspace}
+  \onehalfspacing
+  \setlength{\parindent}{0pt}
+  \setlength{\parskip}{6pt}
+  \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+  % --- TO BE FILLED IN, if you compile this file on its own ------------------
+  \newcommand{\corsodilaurea}{Master's Degree in \dotfill}
+  \newcommand{\titolotesi}{Title of the thesis}
+  \newcommand{\candidato}{Name Surname}
+  \newcommand{\relatore}{Prof. Francesco Longo}
+  \newcommand{\correlatore}{Prof. Name Surname}
+  \newcommand{\annoaccademico}{20\ldots/20\ldots}
+  % ---------------------------------------------------------------------------
+  \def\frontespiziodasolo{}
+  \begin{document}
+\fi
+
+\begin{titlepage}
+  \centering
+
+  \includegraphics[width=3.2cm]{logo-unime.png}\\[0.7cm]
+  {\Large\bfseries UNIVERSITY OF MESSINA}\\[0.25cm]
+  {\large DEPARTMENT OF ENGINEERING}\\[0.35cm]
+  {\large\bfseries \corsodilaurea}\\[0.12cm]
+  \rule{\textwidth}{0.4pt}
+
+  \vfill
+  {\LARGE\bfseries \titolotesi}
+  \vfill
+
+  \begin{tabular}{@{}p{0.47\textwidth}@{\hfill}R{0.47\textwidth}@{}}
+    Supervisor:              & Candidate:                \tabularnewline[0.15cm]
+    \textbf{\relatore}       & \textbf{\candidato}       \tabularnewline[2cm]
+    Co-supervisor:           &                           \tabularnewline[0.15cm]
+    \textbf{\correlatore}    &                           \tabularnewline
+  \end{tabular}
+
+  \vspace{1.6cm}
+  \rule{\textwidth}{0.4pt}\\[0.15cm]
+  {\bfseries ACADEMIC YEAR \annoaccademico}
+
+\end{titlepage}
+\ifdefined\frontespiziodasolo\end{document}\fi

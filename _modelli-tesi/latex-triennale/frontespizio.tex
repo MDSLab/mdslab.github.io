@@ -1,0 +1,60 @@
+% ---------------------------------------------------------------------------
+% Frontespizio.
+%
+% Lo stesso file serve due volte. Incluso da tesi.tex, il blocco qui sotto non
+% viene eseguito, perche` quei comandi tesi.tex li ha gia` definiti. Compilato
+% da solo, produce un PDF di una pagina con il solo frontespizio: e` quello da
+% riempire, mandare in chat e far firmare al relatore.
+%
+% I dati sono gli stessi cinque comandi in tutti e due i casi: se compili la
+% tesi intera li riempi in tesi.tex, se compili solo questo file li riempi qui.
+% ---------------------------------------------------------------------------
+\ifdefined\titolotesi\else
+  \documentclass[12pt,a4paper,oneside]{report}
+  \usepackage[T1]{fontenc}
+  \usepackage{mathptmx}
+  \usepackage[utf8]{inputenc}
+  \usepackage[italian]{babel}
+  \usepackage[a4paper,margin=3cm]{geometry}
+  \usepackage{graphicx}
+  \usepackage{array}
+  \usepackage{setspace}
+  \onehalfspacing
+  \setlength{\parindent}{0pt}
+  \setlength{\parskip}{6pt}
+  \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+  % --- DA RIEMPIRE, se compili questo file da solo ---------------------------
+  \newcommand{\corsodilaurea}{Corso di Laurea in \dotfill}
+  \newcommand{\titolotesi}{Titolo della tesi}
+  \newcommand{\candidato}{Nome Cognome}
+  \newcommand{\relatore}{Chiar.mo Prof. Francesco Longo}
+  \newcommand{\annoaccademico}{20\ldots/20\ldots}
+  % ---------------------------------------------------------------------------
+  \def\frontespiziodasolo{}
+  \begin{document}
+\fi
+
+\begin{titlepage}
+  \centering
+
+  \includegraphics[width=3.2cm]{logo-unime.png}\\[0.7cm]
+  {\Large\bfseries UNIVERSIT\`A DEGLI STUDI DI MESSINA}\\[0.25cm]
+  {\large DIPARTIMENTO DI INGEGNERIA}\\[0.35cm]
+  {\large\bfseries \corsodilaurea}\\[0.12cm]
+  \rule{\textwidth}{0.4pt}
+
+  \vfill
+  {\LARGE\bfseries \titolotesi}
+  \vfill
+
+  \begin{tabular}{@{}p{0.47\textwidth}@{\hfill}R{0.47\textwidth}@{}}
+    Relatore:                & Tesi di Laurea di:        \tabularnewline[0.15cm]
+    \textbf{\relatore}       & \textbf{\candidato}       \tabularnewline
+  \end{tabular}
+
+  \vspace{1.6cm}
+  \rule{\textwidth}{0.4pt}\\[0.15cm]
+  {\bfseries ANNO ACCADEMICO \annoaccademico}
+
+\end{titlepage}
+\ifdefined\frontespiziodasolo\end{document}\fi

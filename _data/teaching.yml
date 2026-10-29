@@ -1,0 +1,162 @@
+# Corsi tenuti da membri del gruppo. I dati vengono dal curriculum, aggiornato ad
+# aprile 2024, integrato per i corsi avviati dopo quella data.
+# `status: current` per i corsi ancora attivi, `past` per quelli conclusi.
+#
+# CONVENZIONE. `role` distingue chi tiene l'intero corso da chi ne tiene un modulo:
+# "Course leader" per la titolarità, "Module lecturer" quando l'insegnamento è una
+# parte di un corso integrato. Il dato va indicato sempre, perché un modulo da 2 CFU
+# dentro un corso altrui non è la stessa cosa di un corso da 12 CFU.
+#
+# Il docente non sta nelle singole voci: essendo lo stesso per tutti i corsi, la
+# pagina lo dichiara una volta in apertura. Se un giorno insegnerà anche qualcun
+# altro del gruppo, andrà reintrodotto un campo `teacher` per voce.
+#
+# `scope` si compila solo quando CFU e ore non sono quelli del corso intero, per
+# esempio perché la pagina riguarda un singolo modulo: la testata lo stampa fra
+# parentesi dopo le ore, così il numero non viene letto come se fosse del corso.
+#
+# `programme` porta il nome ufficiale del corso di studi: in italiano per i corsi
+# erogati in italiano, in inglese per quelli erogati in inglese. È un nome proprio,
+# non si traduce. Il livello non va ripetuto nel nome (niente "Dottorato in
+# Ingegneria"): lo dichiara già `level`, che la pagina rende come etichetta.
+#
+# `links` raccoglie gli indirizzi esterni del corso: `elearning` è lo spazio del
+# corso sulla piattaforma di Ateneo, `catalogue` è la scheda ufficiale nel Course
+# Catalogue, `archive_1`, `archive_2` e `archive_3` sono gli archivi dei testi degli
+# appelli precedenti, uno per prova scritta. I primi due contengono l'anno accademico
+# nei parametri e vanno rifatti a ogni nuova offerta; gli archivi vengono citati da
+# più risposte della stessa pagina. Stando qui si cambiano in un punto solo invece
+# che dentro il testo delle pagine.
+#
+# `credits` e `hours` sono CFU e ore di didattica frontale. `since` è il primo anno
+# accademico di titolarità: dice da quanto il corso è tenuto, che è informazione
+# diversa dall'anno corrente.
+
+- id: fondamenti-di-informatica
+  status: current
+  title: Fondamenti di Informatica
+  level: Bachelor
+  programme: Ingegneria Elettronica e Informatica
+  role: Course leader
+  credits: 12
+  hours: 96
+  since: 2016/2017
+  language: Italian
+  links: &fondamenti_links
+    elearning: https://elearning.unime.it/course/view.php?id=832
+    catalogue: https://unime.coursecatalogue.cineca.it/corsi/2026/10821/insegnamenti/2026/192/2026/1?coorte=2026&schemaid=13878
+    archive_1: https://drive.google.com/drive/folders/19wuUuArBTbhi1hpOWUDAXQ4I7mww5mTy
+    archive_2: https://drive.google.com/drive/folders/1wdfgNtqygGgs8Fym3zvkRnAkh5R5IIe-
+    archive_3: https://drive.google.com/drive/folders/1BBWfuju_t2m774QvXoGM7asBNmHu_0L0
+
+- id: fondamenti-informatica-biomedica
+  status: current
+  title: Fondamenti di Informatica (modulo A)
+  level: Bachelor
+  programme: Ingegneria Biomedica
+  role: Course leader, and lecturer of module A
+  credits: 6
+  hours: 48
+  scope: modulo A
+  since: 2020/2021
+  language: Italian
+  # Stessi spazi e stessi archivi del corso di Elettronica e Informatica: le prove
+  # sono comuni ai due corsi di laurea. Cambia solo la scheda di catalogo, che qui
+  # è quella del modulo A (codice 2721-1), l'unico tenuto dal Prof. Longo.
+  links:
+    <<: *fondamenti_links
+    catalogue: https://unime.coursecatalogue.cineca.it/corsi/2026/10816/insegnamenti/2026/2721-1/2026/9999?annoOrdinamento=2026&coorte=2026
+
+- id: cybersecurity
+  status: current
+  title: CyberSecurity
+  level: Master
+  programme: Engineering in Computer Science
+  role: Course leader
+  credits: 9
+  hours: 72
+  since: 2024/2025
+  language: English
+  links:
+    elearning: https://elearning.unime.it/course/view.php?id=502
+    catalogue: https://unime.coursecatalogue.cineca.it/corsi/2026/10817/insegnamenti/2026/14817/2026/9999?coorte=2026&schemaid=13876
+
+- id: embedded-systems
+  status: current
+  title: Embedded Systems
+  level: Master
+  programme: Engineering in Computer Science
+  role: Course leader
+  credits: 6
+  hours: 48
+  since: 2019/2020
+  language: English
+  links:
+    elearning: https://elearning.unime.it/course/view.php?id=830
+    catalogue: https://unime.coursecatalogue.cineca.it/corsi/2025/10817/insegnamenti/2026/10970/2025/9999?coorte=2025&schemaid=13052
+
+- id: cybersecurity-cps-dottorato
+  status: current
+  title: Cybersecurity nei Cyber Physical Systems
+  level: Doctoral
+  programme: Ingegneria
+  role: Course leader
+  credits: ""
+  hours: 6
+  since: 2024/2025
+  language: English
+
+- id: elementi-informatica-applicata
+  status: past
+  title: Elementi di Informatica Applicata
+  level: Bachelor
+  programme: Scienze e Tecnologie della Navigazione
+  role: Course leader
+  credits: 6
+  hours: 48
+  since: 2017/2018 &ndash; 2020/2021
+  language: Italian
+
+- id: sistemi-elaborazione-informazioni
+  status: past
+  title: Sistemi di Elaborazione delle Informazioni
+  level: Single-cycle
+  programme: Medicina e Chirurgia ad indirizzo Biotecnologico
+  role: Module lecturer, within the integrated course "Fisiologia e Sistemi di Elaborazione delle Informazioni"
+  credits: 2
+  hours: 25
+  since: 2022/2023 &ndash; 2024/2025
+  language: Italian
+
+- id: sensori-attuatori
+  status: past
+  title: Sensori, attuatori e sistemi a microcontrollore
+  level: Doctoral
+  programme: Bioingegneria Applicata alle Scienze Mediche
+  role: Course leader
+  credits: ""
+  hours: 12
+  since: 2021/2022
+  language: Italian
+
+- id: fondamenti-programmazione-dottorato
+  status: past
+  title: Fondamenti di Informatica e Programmazione
+  level: Doctoral
+  programme: Bioingegneria Applicata alle Scienze Mediche
+  role: Course leader
+  credits: ""
+  hours: 6
+  since: 2019/2020 &ndash; 2020/2021
+  language: Italian
+
+- id: informatica-chirurgia
+  status: past
+  title: Informatica
+  level: Specialization school
+  programme: Chirurgia Plastica, Ricostruttiva ed Estetica
+  role: Course leader
+  credits: 3
+  hours: 24
+  since: 2019/2020
+  language: Italian

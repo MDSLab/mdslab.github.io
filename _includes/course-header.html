@@ -1,0 +1,9 @@
+{%- comment -%}
+Intestazione di una pagina di corso. I metadati non si ripetono qui: vengono
+da _data/teaching.yml, accoppiando `page.course_id` al campo `id`. La riga è
+nella lingua di erogazione del corso, come tutto il resto della pagina.
+{%- endcomment -%}
+{%- assign c = site.data.teaching | where: "id", page.course_id | first -%}
+{%- if c -%}
+<p class="course-page-meta">{{ c.programme }} &middot; {% if c.credits != "" %}{{ c.credits }} CFU, {% endif %}{{ c.hours }} {% if c.language == "Italian" %}ore{% else %}hours{% endif %}{% if c.scope %} ({{ c.scope }}){% endif %}</p>
+{%- endif -%}

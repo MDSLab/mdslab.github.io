@@ -1,0 +1,21 @@
+# Il vocabolario dei temi di ricerca, scritto una volta sola.
+#
+# `key` è quello che compare in `topics:` dentro people.yml.
+# `label` è come il tema si legge sul sito, in inglese anche sulle pagine
+# italiane: sono i termini con cui poi si cercano i paper.
+# `area` è la chiave di _data/areas.yml: ogni tema appartiene a una sola area.
+#
+# COSA SI DERIVA DA QUI. La riga di parole chiave sotto ogni foto nella pagina
+# Team, l'elenco dei temi di ogni area sulla pagina delle tesi e le facce sotto
+# ciascuna area. Nessuno di questi è scritto a mano da nessuna parte.
+#
+# Un tema senza nessuno compare lo stesso sulla pagina delle tesi, senza facce
+# sotto: è il modo di annunciare un filone per cui si cerca un tesista.
+#
+# TODO: elencare i temi del laboratorio. Esempio:
+#
+# - key: edge-computing
+#   label: Edge Computing
+#   area: cloud
+
+[]

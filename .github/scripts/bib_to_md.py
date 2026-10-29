@@ -1,9 +1,11 @@
+import os
 import re
 import sys
 from collections import defaultdict
 
 BIB_FILE = "_data/publications.bib"
 MD_FILE = "publications.md"
+LINKS_FILE = "_data/publication_links.yml"
 
 HEADER = """---
 layout: page
@@ -12,47 +14,33 @@ permalink: /publications/
 ---
 
 <style>
+/* Colori, riquadri e pillole stanno in /assets/css/mdslab.css */
 .pub-list {
   list-style: none;
   padding: 0;
 }
 
 .pub-item {
-  border-left: 4px solid #6a0dad;
-  padding: 1em 1.2em;
   margin-bottom: 1.2em;
-  background: #fafafa;
-  border-radius: 0 8px 8px 0;
 }
 
 .pub-title {
-  font-weight: bold;
   font-size: 1em;
-  color: #1a1a2e;
   margin-bottom: 0.3em;
 }
 
 .pub-authors {
   font-size: 0.85em;
-  color: #555;
   margin-bottom: 0.3em;
 }
 
 .pub-venue {
   font-size: 0.85em;
-  color: #888;
   font-style: italic;
 }
 
 .pub-year {
-  display: inline-block;
-  font-size: 0.75em;
-  padding: 0.15em 0.6em;
-  border-radius: 20px;
-  background: #ede7f6;
-  color: #6a0dad;
   margin-left: 0.5em;
-  font-style: normal;
 }
 </style>
 
@@ -102,12 +90,70 @@ def extract_entries(bib_text):
     
     return entries
 
+def normalize(title):
+    """Titolo ridotto a sole lettere e cifre minuscole, così la corrispondenza
+    non dipende da punteggiatura, accenti o spaziatura."""
+    return re.sub(r'[^a-z0-9]', '', title.lower())
+
+# Collegamenti inseriti a mano per le voci che Scopus restituisce senza DOI:
+# tipicamente atti CEUR, che non ne assegnano. Stanno in un file separato perché
+# fetch_scopus.py rigenera il .bib da zero e cancellerebbe qualsiasi aggiunta.
+manual_links = {}
+excluded = set()
+if os.path.exists(LINKS_FILE):
+    with open(LINKS_FILE, encoding="utf-8") as f:
+        current = None
+        for line in f:
+            line = line.split('#')[0].rstrip()
+            if not line.strip():
+                continue
+            if line.startswith('- title:'):
+                current = line.split(':', 1)[1].strip().strip('"\'')
+            elif line.strip().startswith('url:') and current:
+                manual_links[normalize(current)] = line.split(':', 1)[1].strip().strip('"\'')
+                current = None
+            elif line.strip().startswith('exclude:') and current:
+                excluded.add(normalize(current))
+                current = None
+    print(f"Loaded {len(manual_links)} manual links and {len(excluded)} exclusions from {LINKS_FILE}.")
+
 # Leggi file
+
+def normalizza_venue(v):
+    """Ripulisce il nome della sede dalle ridondanze che arrivano da Scopus.
+
+    Scopus toglie la punteggiatura e lascia l'anno dentro il titolo, che la
+    pagina mostra comunque di fianco: ne esce "SmartComp Companion 2026 2026".
+
+    Qui si tolgono solo le cose che non possono cambiare il nome di una sede.
+    In particolare NON si tocca "Proceedings": sembra un prefisso di servizio,
+    ma "Proceedings of the ACM on Measurement and Analysis of Computing
+    Systems" e` il nome vero di una rivista, e toglierlo la inventerebbe.
+
+    Restano lunghi i nomi dei congressi co-locati, dove Scopus concatena i
+    titoli di tutte le conferenze: accorciarli richiede una tabella scritta a
+    mano, perche` solo chi li conosce sa quale sia la sede giusta.
+    """
+    v = re.sub(r"\s+(19|20)\d\d$", "", v)                 # l'anno finale, gia` mostrato a fianco
+    v = re.sub(r"^(Proceedings)\s+(19|20)\d\d\s+", r"\1 ", v)   # e quello subito dopo "Proceedings"
+    v = re.sub(r"^Lecture Notes in Computer Science Including Subseries.*$",
+               "Lecture Notes in Computer Science", v)
+    # Scopus toglie il trattino da "On-Line" e ne esce "on on Line Testing":
+    # qui il nome si corregge, non si accorcia.
+    v = v.replace("Symposium on on Line Testing", "Symposium on On-Line Testing")
+    return v.strip()
+
+
 with open(BIB_FILE, "r", encoding="utf-8") as f:
     bib_text = f.read()
 
 entries = extract_entries(bib_text)
 print(f"Parsed {len(entries)} entries.")
+
+before = len(entries)
+entries = [e for e in entries if normalize(e['fields'].get('title', '')) not in excluded]
+if before != len(entries):
+    print(f"Excluded {before - len(entries)} entries listed in {LINKS_FILE}.")
 
 # Ordina per anno decrescente
 entries.sort(key=lambda e: int(e['fields'].get('year', 0)), reverse=True)
@@ -139,10 +185,13 @@ for year in sorted(by_year.keys(), reverse=True):
         author_str = ', '.join(formatted_authors)
 
         venue = fields.get('journal') or fields.get('booktitle') or fields.get('publisher') or ''
+        venue = normalizza_venue(venue)
 
         url = fields.get('url', '') or fields.get('doi', '')
         if url and url.startswith('10.'):
             url = f"https://doi.org/{url}"
+        if not url:
+            url = manual_links.get(normalize(title), '')
 
         title_html = f'<a href="{url}" target="_blank">{title}</a>' if url else title
 

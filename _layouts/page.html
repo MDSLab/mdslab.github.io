@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+{%- comment -%}
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+
+Copia del layout `page` di So Simple 3.2.0, con una sola aggiunta: il pulsante di
+cambio lingua dentro l'intestazione, accanto al titolo, che dal contenuto della
+pagina non è raggiungibile. Le pagine che esistono in due lingue lo attivano
+dichiarando `translation` e `translation_label` nel front matter.
+{%- endcomment -%}
+
+<main id="main" class="main-content" aria-label="Content">
+  <article>
+    {% include page-image.html %}
+    <div class="page-wrapper">
+      <header class="page-header{% if page.translation %} page-header--translated{% endif %}">
+        {% if page.id %}
+          {% assign title = page.title | markdownify | strip_html %}
+        {% else %}
+          {% assign title = page.title %}
+        {% endif %}
+        {% if page.link %}
+          <h1 id="page-title" class="page-title"><a href="{{ page.link }}">{{ title }} <span class="link-arrow">&rarr;</span></a></h1>
+        {% else %}
+          <h1 id="page-title" class="page-title">{{ title }}</h1>
+        {% endif %}
+        {% if page.translation %}
+          <a class="lang-switch" href="{{ page.translation | relative_url }}">{{ page.translation_label }}</a>
+        {% endif %}
+      </header>
+      <div class="page-content">
+        {{ content }}
+
+        {% if page.share %}
+          {% include social-share.html %}
+        {% endif %}
+      </div>
+    </div>
+  </article>
+</main>

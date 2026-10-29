@@ -1,0 +1,8 @@
+# Ex membri, mostrati in fondo alla pagina Team in forma sobria: solo foto,
+# nome e ruolo. Se l'elenco è vuoto la sezione non compare.
+#
+# - name: Mario Rossi
+#   role: Former PhD Student
+#   photo: /images/people/Rossi.jpg
+
+[]

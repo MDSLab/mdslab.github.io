@@ -1,0 +1,24 @@
+# Traduzioni delle etichette che compaiono sulle schede dei corsi. Stanno qui e non
+# dentro _data/teaching.yml perché sono vocabolario, non dati del corso: gli stessi
+# valori si ripetono su più corsi e vanno tradotti una volta sola.
+#
+# La chiave è il valore inglese, così com'è scritto nei dati. Le pagine cercano la
+# traduzione con un `default` che rimette l'inglese: se domani si aggiunge un livello
+# o un ruolo nuovo e ci si dimentica di tradurlo, la scheda mostra l'originale invece
+# di una casella vuota.
+
+level:
+  Bachelor: Laurea triennale
+  Master: Laurea magistrale
+  Doctoral: Dottorato
+  Single-cycle: Ciclo unico
+  Specialization school: Scuola di specializzazione
+
+role:
+  Course leader: Titolare del corso
+  Course leader, and lecturer of module A: Titolare del corso e docente del modulo A
+  'Module lecturer, within the integrated course "Fisiologia e Sistemi di Elaborazione delle Informazioni"': 'Docente di un modulo del corso integrato "Fisiologia e Sistemi di Elaborazione delle Informazioni"'
+
+language:
+  Italian: italiano
+  English: inglese

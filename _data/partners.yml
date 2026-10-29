@@ -1,0 +1,10 @@
+# Loghi della fascia «Our Partners» in fondo alla home, nell'ordine mostrato.
+# Se l'elenco è vuoto la fascia non compare. I loghi stanno in /images/.
+#
+# TODO: inserire i partner. Esempio:
+#
+# - name: CNR
+#   url: https://www.cnr.it/
+#   logo: /images/CNR.png
+
+[]

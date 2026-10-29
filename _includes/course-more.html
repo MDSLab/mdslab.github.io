@@ -1,0 +1,20 @@
+{%- comment -%}
+Il rimando alla pagina del corso, in fondo alla scheda.
+
+L'etichetta sta nella lingua della pagina che la mostra, e fra parentesi dice in
+che lingua è la pagina di arrivo: le pagine dei corsi esistono in una lingua
+sola, quella in cui il corso è insegnato, e chi clicca lo deve sapere prima.
+
+La lingua di arrivo si legge da `lang` della pagina di destinazione e non dai
+dati del corso: è la pagina stessa a dichiararla, e quella dichiarazione è
+anche ciò che il browser usa per sillabare.
+
+Uso: {% include course-more.html cp=cp %}
+{%- endcomment -%}
+{%- assign arrivo_it = false -%}
+{%- if include.cp.lang == 'it' -%}{%- assign arrivo_it = true -%}{%- endif -%}
+{%- if page.lang == 'it' -%}
+<p class="course-more">Maggiori informazioni ({% if arrivo_it %}in italiano{% else %}in inglese{% endif %}) &rarr;</p>
+{%- else -%}
+<p class="course-more">More information ({% if arrivo_it %}in Italian{% else %}in English{% endif %}) &rarr;</p>
+{%- endif -%}

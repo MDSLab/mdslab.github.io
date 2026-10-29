@@ -1,0 +1,32 @@
+# Progetti del laboratorio.
+# `status: current` li mette fra quelli attivi, `past` fra i conclusi; una
+# sezione senza progetti non compare.
+# `areas` usa le chiavi di _data/areas.yml: sono le etichette sulle card.
+# L'ordine qui è quello mostrato in pagina, dal più recente.
+#
+# Ogni voce è resa su quattro righe:
+#   1. acronym + period + role
+#   2. title               il titolo per esteso
+#   3. scope + project     dove si colloca la voce nella gerarchia (facoltativi)
+#   4. programme/funding, poi i partner
+# I campi testuali vuoti ("") non vengono mostrati.
+#
+# TODO: inserire i progetti. Esempio:
+#
+# - id: example
+#   status: current
+#   acronym: EXAMPLE
+#   title: Full title of the project
+#   period: 2025 &ndash; 2027
+#   role: Principal Investigator for the University of Messina
+#   scope: ""
+#   project: ""
+#   project_title: ""
+#   programme: PRIN 2022
+#   funding: "&euro; 100,000"
+#   partners: ""
+#   areas: [cloud, iot]
+#   description: >-
+#     What the project does, in two or three sentences.
+
+[]

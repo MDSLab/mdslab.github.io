@@ -1,0 +1,50 @@
+{%- comment -%}
+Le aree della pagina «Fare la tesi in MDSLab»: per ciascuna la
+riga di apertura, il paragrafo, i temi e i dottorandi che li seguono.
+
+Niente qui è scritto a mano. Le aree vengono da _data/areas.yml, i temi da
+_data/topics.yml, le persone da chi in people.yml porta un tema di quell'area.
+Un tema senza nessuno compare lo stesso, senza facce sotto: è così che si
+annuncia un filone per cui si cerca un tesista.
+
+Compaiono solo i dottorandi (`role: PhD Student` in people.yml).
+Le aree con `thesis: false` in areas.yml restano fuori.
+{%- endcomment -%}
+{%- assign it = false -%}{%- if page.lang == 'it' -%}{%- assign it = true -%}{%- endif -%}
+
+{%- for a in site.data.areas -%}
+{%- if a.thesis == false -%}{%- continue -%}{%- endif -%}
+<section class="area">
+  <h2>{{ a.label }}</h2>
+  <p class="area-lead">{% if it %}{{ a.tagline_it }}{% else %}{{ a.tagline_en }}{% endif %}</p>
+  {%- if it -%}{%- assign desc = a.description_it -%}{%- else -%}{%- assign desc = a.description_en -%}{%- endif -%}
+  {%- if desc and desc != "" %}
+  <p class="area-text">{{ desc }}</p>
+  {%- endif -%}
+
+  {%- assign temi = site.data.topics | where: "area", a.key -%}
+  {%- if temi.size > 0 -%}
+  <ul class="temi">
+    {%- for t in temi %}<li>{{ t.label }}</li>{% endfor -%}
+  </ul>
+  {%- endif -%}
+
+  <div class="faces">
+    {%- for p in site.data.people -%}
+      {%- if p.role != 'PhD Student' -%}{%- continue -%}{%- endif -%}
+      {%- assign sue = "|" -%}
+      {%- for k in p.topics -%}
+        {%- assign t = site.data.topics | where: "key", k | first -%}
+        {%- assign sue = sue | append: t.area | append: "|" -%}
+      {%- endfor -%}
+      {%- assign cercata = "|" | append: a.key | append: "|" -%}
+      {%- if sue contains cercata %}
+    <a class="face" href="{{ '/team/#' | append: p.id | relative_url }}">
+      <img src="{{ p.photo | relative_url }}" alt="{{ p.name }}" loading="lazy">
+      <span>{{ p.name }}</span>
+    </a>
+      {% endif -%}
+    {%- endfor -%}
+  </div>
+</section>
+{%- endfor -%}

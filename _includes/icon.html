@@ -1,0 +1,9 @@
+{%- comment -%}
+Disegna un'icona come SVG in linea, leggendone il tracciato da _data/icons.yml.
+Uso: {% include icon.html name="envelope" %}
+L'icona eredita il colore del testo e la sua dimensione, come faceva il <i> di
+Font Awesome; è nascosta ai lettori di schermo perché il testo alternativo sta
+sempre sul collegamento che la contiene.
+{%- endcomment -%}
+{%- assign ic = site.data.icons[include.name] -%}
+<svg class="icon" viewBox="0 0 {{ ic.w }} {{ ic.h }}" aria-hidden="true" focusable="false"><path d="{{ ic.d }}"/></svg>

@@ -17,9 +17,14 @@ image:
 .page-image {
   margin-top: 0 !important;
   padding-top: 0 !important;
+  margin-bottom: 6px !important;
 }
 
+/* Altezza legata al viewport: su schermi bassi la testata si ritira
+   invece di spingere il testo sotto la piega. */
 .entry-feature-image {
+  height: 22vh;
+  min-height: 160px;
   max-height: 350px;
   width: 100%;
   object-fit: cover;
@@ -27,21 +32,47 @@ image:
   display: block;
 }
 
-.page-content p {
-  text-align: justify;
+.page-header h1 {
+  font-size: 2.5rem;
 }
 
+.page-content p {
+  margin-bottom: 0.9em;
+}
+
+/* Il nome per esteso, subito sotto la sigla del laboratorio. Il selettore
+   nomina .page-content perche' li' dentro i paragrafi sono giustificati, e
+   questo va centrato. */
+.page-content p.acronimo {
+  text-align: center;
+  margin: -0.4em 0 1.6em;
+  font-size: 1.02em;
+  line-height: 1.4;
+  color: var(--muted);
+  letter-spacing: 0.3px;
+}
+
+.site-footer {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+}
+
+/* I loghi hanno proporzioni molto diverse fra loro e non stanno in una riga
+   larga quanto la colonna di testo: questa fascia sfonda il contenitore. */
 .partners-section {
-  margin: 2em 0;
+  margin: 1.1em 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 94vw;
+  max-width: 1040px;
 }
 
 .partners-section h3 {
   text-align: center;
-  color: #555;
-  font-size: 1em;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 1.5em;
+  margin-bottom: 0.9em;
 }
 
 .partners-grid {
@@ -49,29 +80,48 @@ image:
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 2em;
+  gap: 1.5em;
+}
+
+.partners-grid a {
+  display: inline-flex;
+  align-items: center;
+  border-bottom: none;
 }
 
 .partners-grid img {
-  height: 50px;
+  height: 60px;
   width: auto;
+  max-width: 120px;
   object-fit: contain;
   filter: grayscale(100%);
   opacity: 0.7;
   transition: all 0.3s ease;
 }
 
-.partners-grid img:hover {
+.partners-grid a:hover img {
   filter: grayscale(0%);
   opacity: 1;
 }
 </style>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis magna sit amet convallis facilisis. Duis bibendum pharetra bibendum. Sed dapibus quam rutrum nibh euismod eleifend vitae nec eros. Vivamus quis efficitur justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum at pharetra elit. Donec bibendum justo a auctor pretium. Nulla a est tortor. Aliquam erat volutpat. Nam sapien dui, lacinia at purus in, iaculis tincidunt urna. Donec quis felis sit amet ex pretium cursus. Donec mattis tincidunt fringilla. Aliquam ex felis, efficitur quis leo finibus, tempus mattis arcu. Etiam ut nunc at ante elementum vulputate. 
+<p class="acronimo">Mobile and Distributed Systems Laboratory</p>
 
+MDSLab is a research group at the Department of Engineering of the University of Messina.
+
+<!-- TODO: presentazione del laboratorio (chi lo guida, su cosa lavora, collaborazioni). -->
+
+Our research brings together embedded systems, cybersecurity, artificial intelligence, IoT and cloud computing: the areas are described on the [Research]({{ '/research/' | relative_url }}) page.
+
+{% if site.data.partners.size > 0 %}
 ---
 
-<div class="partners-section">
+<div class="partners-section" id="partners">
   <h3>Our Partners</h3>
-  
+  <div class="partners-grid">
+{%- for p in site.data.partners %}
+    <a href="{{ p.url }}" target="_blank" rel="noopener" title="{{ p.name }}"><img src="{{ p.logo | relative_url }}" alt="{{ p.name }}"></a>
+{%- endfor %}
+  </div>
 </div>
+{% endif %}

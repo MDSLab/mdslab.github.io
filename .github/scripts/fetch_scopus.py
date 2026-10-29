@@ -1,5 +1,6 @@
 import requests
 import os
+import re
 import sys
 
 API_KEY = os.environ.get("SCOPUS_API_KEY", "")
@@ -15,6 +16,29 @@ HEADERS = {
     "X-ELS-APIKey": API_KEY,
     "Accept": "application/json",
 }
+
+# L'API restituisce i nomi delle sedi in Title Case, che appiattisce gli acronimi
+# ("Smartcomp", "Ceur"). L'export manuale di Scopus invece li preserva.
+ACRONYMS = {
+    "Atc": "ATC", "Cbdcom": "CBDCom", "Ccgridw": "CCGridW", "Ccnc": "CCNC",
+    "Ceur": "CEUR", "Cgc": "CGC", "Closer": "CLOSER", "Cnsm": "CNSM",
+    "Cpscom": "CPSCom", "Divanet": "DIVANet", "Eai": "EAI", "Ficloud": "FiCloud",
+    "Giots": "GIoTS", "Greencom": "GreenCom", "Iceis": "ICEIS", "Iciot": "ICIoT",
+    "Icstw": "ICSTW", "Icts": "ICTs", "Imeko": "IMEKO", "Incos": "INCoS",
+    "Iolts": "IOLTS", "Iop": "IOP", "Iot": "IoT", "Ithings": "iThings",
+    "Itnac": "ITNAC", "Lnicst": "LNICST", "Matec": "MATEC", "Msn": "MSN",
+    "Mswim": "MSWiM", "Ncca": "NCCA", "Obd": "OBD", "Percom": "PerCom",
+    "Rtsi": "RTSI", "Sca": "SCA", "Scalcom": "ScalCom", "Simutools": "SimuTools",
+    "Sin": "SIN", "Smartcomp": "SmartComp", "Smartdata": "SmartData",
+    "Uic": "UIC", "Valuetools": "ValueTools", "Waina": "WAINA", "Wd": "WD",
+    "Wetice": "WETICE", "Wf": "WF", "Wispnet": "WiSPNET", "Wowmom": "WoWMoM",
+    "Wseas": "WSEAS", "Wt": "WT",
+}
+
+ACRONYM_RE = re.compile(r"\b(" + "|".join(ACRONYMS) + r")\b")
+
+def normalize_venue(venue):
+    return ACRONYM_RE.sub(lambda m: ACRONYMS[m.group(0)], venue)
 
 def fetch_all(query):
     url = "https://api.elsevier.com/content/search/scopus"
@@ -32,7 +56,7 @@ def fetch_all(query):
         print(f"  Request start={start}: HTTP {r.status_code}")
         if r.status_code != 200:
             print(f"  Response: {r.text[:300]}")
-            break
+            raise RuntimeError(f"Scopus API returned HTTP {r.status_code}")
         data = r.json()
         entries = data.get("search-results", {}).get("entry", [])
         if not entries or entries[0].get("error"):
@@ -88,7 +112,7 @@ def get_authors(entry):
 def entry_to_bibtex(entry, seen_keys):
     title = entry.get("dc:title", "Unknown Title")
     creator = entry.get("dc:creator", "Unknown")
-    venue = entry.get("prism:publicationName", "")
+    venue = normalize_venue(entry.get("prism:publicationName", ""))
     date = entry.get("prism:coverDate", "0000-01-01")
     year = date[:4]
     doi = entry.get("prism:doi", "")
@@ -135,6 +159,11 @@ def entry_to_bibtex(entry, seen_keys):
 print("Fetching papers from Scopus...")
 all_entries = fetch_all(QUERY)
 print(f"\nTotal unique papers: {len(all_entries)}")
+
+# Senza questo controllo un fetch fallito sovrascriverebbe il .bib con un file vuoto
+if not all_entries:
+    print("Error: Scopus returned no results; keeping the existing .bib file.")
+    sys.exit(1)
 
 seen_keys = set()
 bib_output = ""

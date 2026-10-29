@@ -1,0 +1,551 @@
+/* ==========================================================================
+   MDSLab — stile comune
+   Caricato dopo main.css e dopo la skin del tema, quindi le regole qui
+   vincono su quelle del tema. Le pagine mantengono inline solo ciò che è
+   davvero specifico: tutto il resto vive qui.
+   ========================================================================== */
+
+:root {
+  --accent: #0277BD;
+  --accent-bright: #039BE5;
+  --accent-soft: #E3F2FA;
+
+  --ink: #222;
+  --body-text: #444;
+  --muted: #888;
+  --line: #E5E5E5;
+  --surface: #FAFAFA;
+
+  /* Unico colore fuori dalla scala dell'azzurro: serve per gli avvisi, cioè
+     per le cose che allo studente, se ignorate, costano care. */
+  --warn: #C62828;
+  --warn-soft: #FDECEA;
+
+  --radius: 8px;
+}
+
+/* Larghezza del contenuto
+   Il tema stringe la home a 768px mentre ogni altra pagina usa 1024px.
+   Allineate, così il testo ha la stessa misura ovunque.
+   ========================================================================== */
+.layout--home .page-wrapper {
+  max-width: 1024px;
+}
+
+/* Collegamenti
+   ========================================================================== */
+a {
+  color: var(--accent);
+}
+
+a:hover,
+.entry a:hover {
+  color: var(--accent-bright);
+}
+
+/* Riquadri
+   Stesso oggetto su Publications, Teaching e About: sfondo chiaro, filo
+   grigio, bordo sinistro colorato.
+   ========================================================================== */
+.pub-item,
+.course-card,
+.research-item,
+.faq-item,
+.audience {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent-bright);
+  border-radius: var(--radius);
+  padding: 1.1em 1.3em;
+  color: var(--body-text);
+}
+
+.pub-title,
+.course-title,
+.research-header h3 {
+  color: var(--ink);
+  font-weight: bold;
+}
+
+/* Pillole
+   ========================================================================== */
+.pub-year,
+.course-badge {
+  display: inline-block;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 20px;
+  padding: 0.2em 0.7em;
+  font-size: 0.75em;
+  font-style: normal;
+}
+
+/* Micro-titoli in maiuscoletto
+   Stessa tipografia ovunque; cambia solo il colore, perché il ruolo del
+   direttore è un'informazione, le altre sono etichette di sezione.
+   ========================================================================== */
+.partners-section h3,
+.alumni-section h2,
+.director-role {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85em;
+}
+
+.partners-section h3,
+.alumni-section h2 {
+  color: var(--muted);
+}
+
+.director-role {
+  color: var(--accent);
+}
+
+/* Testi secondari
+   ========================================================================== */
+.pub-authors,
+.pub-venue,
+.course-degree,
+.course-professor,
+.person-role,
+.alumni-role {
+  color: var(--muted);
+}
+
+/* Dettagli colorati
+   ========================================================================== */
+.img-circle:hover {
+  border-color: var(--accent-bright);
+}
+
+.research-header i {
+  color: var(--accent-bright);
+}
+
+/* Riquadri cliccabili
+   Un riquadro che porta altrove si clicca tutto, non solo sulla parola: il
+   link sta nel titolo e il suo ::after copre l'intero riquadro. Non si può
+   avvolgere il riquadro in un <a> perché kramdown tratta l'ancora come
+   elemento inline, chiude il tag prima del titolo e stampa un </a> letterale.
+   ========================================================================== */
+.audience--link,
+.course-card--link {
+  position: relative;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.audience--link h2 a,
+.course-card--link .course-title a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.audience--link h2 a::after,
+.course-card--link .course-title a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.audience--link:hover,
+.course-card--link:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Riquadri domanda-risposta
+   Stesso oggetto per i blocchi per destinatario di Teaching (.audience) e per
+   le FAQ dei corsi (.faq-item): titolo colorato, testo sotto.
+   Nelle pagine dei corsi le domande sono nella lingua di erogazione, gli
+   ancoraggi no: quelli sono identificatori e restano uguali su tutte le
+   pagine, così un link a una domanda vale per qualunque corso.
+   ========================================================================== */
+.course-page-meta {
+  font-size: 0.85em;
+  color: var(--muted);
+  margin-bottom: 1.8em;
+}
+
+.faq-item,
+.audience {
+  padding: 1.2em 1.4em;
+  margin-bottom: 1.2em;
+}
+
+.faq-item h2,
+.audience h2 {
+  font-size: 1.05em;
+  color: var(--accent);
+  margin: 0 0 0.6em;
+}
+
+/* Domanda a scomparsa
+   Ogni riquadro è un <details>: la domanda resta sempre visibile, la risposta
+   si apre al clic. Elemento nativo, quindi funziona da tastiera e con i lettori
+   di schermo senza aggiungere nulla. */
+.faq-item > summary {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8em;
+  cursor: pointer;
+  list-style: none;
+}
+
+/* Il triangolo nativo si toglie in tre modi diversi a seconda del motore del
+   browser: `list-style` qui sopra, `::marker` e, sui browser WebKit più vecchi,
+   lo pseudo-elemento proprietario. */
+.faq-item > summary::marker {
+  content: "";
+}
+
+.faq-item > summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item > summary h2 {
+  margin: 0;
+}
+
+.faq-item > summary::after {
+  content: "+";
+  margin-left: auto;
+  color: var(--accent);
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.faq-item[open] > summary::after {
+  content: "\2212";
+}
+
+.faq-item[open] > summary {
+  margin-bottom: 0.8em;
+}
+
+.faq-item p,
+.audience p {
+  font-size: 0.9em;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.faq-item p + p,
+.audience p + p {
+  margin-top: 0.7em;
+}
+
+.faq-item ul {
+  font-size: 0.9em;
+  line-height: 1.6;
+  margin: 0.7em 0 0;
+  padding-left: 1.2em;
+}
+
+/* Un paragrafo dopo un elenco ha bisogno dello stesso stacco che hanno fra
+   loro due paragrafi: l'elenco non porta margine sotto. */
+.faq-item ul + p {
+  margin-top: 0.7em;
+}
+
+.faq-item li {
+  margin-bottom: 0.6em;
+}
+
+.faq-item li:last-child {
+  margin-bottom: 0;
+}
+
+.wip {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.faq-warning {
+  background: var(--warn-soft);
+  border-left: 4px solid var(--warn);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.9em 1.1em;
+  margin-top: 1em;
+}
+
+/* Cambio di lingua
+   Il pulsante sta nell'intestazione, accanto al titolo, e compare solo sulle
+   pagine che esistono davvero in due lingue: le pagine dei corsi non lo hanno,
+   perché stanno nella lingua in cui il corso è insegnato e una traduzione non
+   esiste.
+   L'etichetta e` una frase intera e non una parola sola, percio` qui niente
+   maiuscoletto: «VAI ALL'ITALIANO» tutto maiuscolo a corpo piccolo si legge
+   peggio di «Vai all'italiano».
+   ========================================================================== */
+/* `center` e non `baseline`: il titolo e` grande e il pulsante piccolo, e
+   allineando le basi il pulsante finisce in fondo al titolo, come se fosse
+   caduto. Centrato sull'altezza del titolo sta dove l'occhio lo cerca.
+   Il margine sotto il titolo passa all'intestazione: restando sul titolo
+   entrerebbe nel calcolo del centro e tirerebbe giu` il pulsante di meta` del
+   margine. Il valore e` quello del tema, 0.5em del titolo, scritto in rem
+   perche' qui sotto il titolo non c'e` piu`. */
+.page-header--translated {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6em 1.2em;
+  margin-bottom: 1.68rem;
+}
+
+.page-header--translated .page-title {
+  margin-bottom: 0;
+}
+
+/* `margin-left: auto` tiene il pulsante a destra anche quando lo schermo e`
+   stretto e va a capo sotto il titolo: altrimenti finirebbe a sinistra e la
+   frase nel testo, che dice «in alto a destra», direbbe una cosa falsa. */
+.lang-switch {
+  font-size: 0.8em;
+  white-space: nowrap;
+  margin-left: auto;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 20px;
+  padding: 0.4em 1em;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.lang-switch:hover {
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Giustificazione
+   Giustificare senza sillabare apre buchi bianchi fra le parole, e su uno schermo
+   stretto diventano fiumi verticali: `hyphens` è quindi parte della regola, non un
+   ornamento. Il browser sillaba secondo la lingua dichiarata dalla pagina, per cui
+   le pagine in italiano portano `lang: it` nel front matter.
+   Titoli, etichette e didascalie restano fuori: su una riga sola la
+   giustificazione non fa nulla e la sillabazione spezzerebbe parole in evidenza.
+   ========================================================================== */
+.page-content p,
+.page-content li {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/* Sotto i 700px la colonna è troppo stretta perché la giustificazione regga senza
+   sillabare, e la sillabazione dipende da dizionari che non tutti i browser hanno:
+   Chromium su Linux, per esempio, non li include. Su schermo stretto quindi si
+   resta a bandiera, che è sempre leggibile. */
+@media (min-width: 700px) {
+  .page-content p,
+  .page-content li {
+    text-align: justify;
+  }
+}
+
+/* Icone
+   Disegnate in linea da _data/icons.yml. Prendono colore e dimensione dal testo che
+   le contiene, come faceva il <i> di Font Awesome; lo scostamento verticale è
+   quello che Font Awesome applicava per appoggiarle alla linea di base.
+   ========================================================================== */
+.icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: -0.125em;
+}
+
+.social-icon .icon {
+  width: 2em;
+  height: 2em;
+}
+
+/* Lo schema della pagina «Fare la tesi in MDSLab»
+   Testo e colori stanno qui e non dentro l'SVG, così seguono il sito e si
+   cambiano in un posto solo.
+   ========================================================================== */
+.stack-diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 2.4em 0 2em;
+  font-family: inherit;
+}
+
+.sd-kicker {
+  font-size: 13px;
+  letter-spacing: 2px;
+  fill: var(--muted);
+}
+
+.sd-axis {
+  stroke: var(--line);
+  stroke-width: 2;
+}
+
+.sd-axis-head {
+  fill: var(--line);
+}
+
+.sd-layer {
+  fill: var(--surface);
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.sd-edge {
+  fill: var(--accent);
+}
+
+.sd-layer-name {
+  font-size: 17px;
+  font-weight: 700;
+  fill: var(--ink);
+}
+
+.sd-layer-ex {
+  font-size: 13.5px;
+  fill: var(--muted);
+}
+
+.sd-link {
+  stroke: var(--line);
+  stroke-width: 2;
+}
+
+.sd-link-head {
+  fill: var(--line);
+}
+
+.sd-card {
+  fill: var(--surface);
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.sd-cap-0 { fill: #01579B; }
+.sd-cap-1 { fill: var(--accent); }
+.sd-cap-2 { fill: var(--accent-bright); }
+
+.sd-verb {
+  font-size: 19px;
+  font-weight: 700;
+  fill: var(--ink);
+}
+
+.sd-area {
+  font-size: 13.5px;
+  fill: var(--accent);
+}
+
+.sd-foot {
+  font-size: 13.5px;
+  fill: var(--muted);
+  font-style: italic;
+}
+
+/* «Fare la tesi in MDSLab»
+   Pagina persuasiva, non informativa: niente riquadri richiudibili, tutto
+   aperto e lungo, perché chi arriva qui deve scorrere e lasciarsi convincere.
+   ========================================================================== */
+.area {
+  margin: 2.4em 0;
+}
+
+.area h2 {
+  margin: 0 0 0.7em;
+  font-size: 1.35em;
+  line-height: 1.2;
+}
+
+/* La riga che segue il titolo dell'area: dice in una frase a cosa serve. */
+.area-lead {
+  font-size: 1.05em;
+  line-height: 1.5;
+  color: var(--accent);
+  margin: 0 0 0.8em;
+  max-width: 44em;
+}
+
+.area-text {
+  font-size: 1.02em;
+  line-height: 1.7;
+  color: var(--body-text);
+  margin: 0 0 1em;
+  max-width: 44em;
+}
+
+.area h3 {
+  margin: 1.8em 0 0.9em;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+/* I temi aperti: quelli su cui si lavora adesso, non i titoli dei progetti.
+   Restano in inglese perché sono i termini con cui poi si cercano i paper. */
+.temi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.4em;
+}
+
+.temi li {
+  font-size: 0.85em;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 20px;
+  padding: 0.3em 0.9em;
+}
+
+.faces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4em;
+}
+
+.face {
+  display: block;
+  width: 92px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.face img {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--line);
+  transition: border-color 0.2s;
+}
+
+.face:hover img {
+  border-color: var(--accent);
+}
+
+.face span {
+  display: block;
+  margin-top: 0.5em;
+  font-size: 0.78em;
+  line-height: 1.3;
+  color: var(--body-text);
+}
+
+.area--door {
+  background: var(--accent-soft);
+  border-radius: var(--radius);
+  padding: 1.6em 1.8em;
+}
+
+.area--door h2 {
+  font-size: 1.4em;
+}

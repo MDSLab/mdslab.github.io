@@ -6,10 +6,10 @@ plugins:
   - jekyll-paginate
 
 
-locale: it-IT
-title: MDSLab Unime
+locale: en-US
+title: MDSLab
 description: Mobile and Distributed Systems Laboratory
-url: "https://github.com/MDSLab/mdslab.github.io"
+url: "https://mdslab.github.io"
 baseurl: ""
 skin: "/assets/css/skins/default.css"
 
@@ -18,13 +18,26 @@ paginate_path: /page:num/
 
 author:
   name: "MDSLab"
-  bio: "MDSLab Unime"
+  bio: "Mobile and Distributed Systems Laboratory"
+
+copyright: >-
+  &copy; 2026 MDSLab &middot; Department of Engineering &middot; University of Messina.
+  Powered by [Jekyll](https://jekyllrb.com) &amp; [So Simple](https://github.com/mmistakes/so-simple-theme).
 
 # Footer
 footer_links:
   - title: GitHub
-    url: https://github.com/MDSLab/mdslab.github.io
-    icon: fab fa-github-square
+    url: https://github.com/MDSLab
+    icon: github-square
+
+# jQuery è servita dal repository invece che dal suo CDN, così il browser di chi
+# visita il sito non contatta code.jquery.com, che altrimenti ne vedrebbe
+# l'indirizzo IP. L'elenco sostituisce per intero quello predefinito del tema,
+# quindi comprende anche main.min.js. Font Awesome non compare perché le sue icone
+# sono disegnate in linea: vedi _data/icons.yml.
+footer_scripts:
+  - /assets/js/vendor/jquery-3.3.1.min.js
+  - /assets/js/main.min.js
 
 after_footer_scripts:
   - /assets/js/custom.js
