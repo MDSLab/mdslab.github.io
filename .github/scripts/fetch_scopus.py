@@ -8,7 +8,7 @@ if not API_KEY:
     print("Error: SCOPUS_API_KEY environment variable not set.")
     sys.exit(1)
 
-QUERY = "AU-ID(34868328300) OR AU-ID(59757039100) OR AU-ID(60225938300) OR AU-ID(60097846900) OR ORCID(0009-0006-2908-1475)"
+QUERY = "AU-ID(35618875300)"
 
 BIB_FILE = "_data/publications.bib"
 

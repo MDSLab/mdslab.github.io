@@ -4,8 +4,6 @@ title: Research
 permalink: /research/
 ---
 
-MDSLab works at the intersection of embedded systems, cybersecurity, artificial
-intelligence, IoT and cloud computing. Our research is organized around the areas below.
 
 <style>
 /* Riquadri e colori arrivano da /assets/css/mdslab.css */

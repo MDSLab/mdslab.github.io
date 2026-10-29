@@ -22,77 +22,70 @@
 # I temi di ciascuna area non stanno qui: stanno in _data/topics.yml, che dice a
 # quale area ciascun tema appartiene.
 
-- key: ai-robotics
-  label: AI, Robotics &amp; Automation
-  icon: cogs
-  tag: AI &amp; Robotics
-  tagline_en: Autonomous systems that learn, adapt and make decisions, from autonomous driving to industrial automation.
-  tagline_it: Sistemi autonomi che imparano, si adattano e prendono decisioni, dalla guida autonoma all'automazione industriale.
+- key: 
+  label: 
+  icon: 
+  tag: 
+  tagline_en: 
+  tagline_it:
   description_en: ""
   description_it: ""
   research_en: >-
-    We develop intelligent algorithms and advanced machine learning models to create
-    autonomous systems capable of learning, adapting, and optimizing complex
-    decision-making processes, from autonomous driving to industrial automation.
+  
 
-- key: cybersecurity
-  label: Cyber Security
-  icon: shield-alt
-  tag: Security
-  tagline_en: Protecting digital infrastructures and critical data against sophisticated threats.
-  tagline_it: Proteggere le infrastrutture digitali e i dati critici dalle minacce più sofisticate.
+- key: 
+  label: 
+  icon: 
+  tag: 
+  tagline_en: 
+  tagline_it: 
   description_en: ""
   description_it: ""
   research_en: >-
-    We protect the integrity of digital infrastructures through trustless approaches
-    and proactive defense strategies, ensuring the security of critical data against
-    the most sophisticated cyber threats.
+  
 
-- key: embedded
-  label: Embedded Systems
-  icon: microchip
-  tag: Embedded
-  tagline_en: Real-time systems and complex applications coexisting on a single embedded platform.
-  tagline_it: Sistemi real-time e applicazioni complesse che convivono sulla stessa piattaforma embedded.
+- key: 
+  label:
+  icon: 
+  tag: 
+  tagline_en: 
+  tagline_it: 
   description_en: ""
   description_it: ""
   research_en: >-
-    We implement solutions on embedded hardware and create isolated environments that
-    allow the coexistence of real-time systems and complex applications on a single
-    platform, ensuring robustness and operational flexibility.
 
-- key: iot
-  label: IoT
-  icon: wifi
-  tag: IoT
-  tagline_en: Ecosystems of connected devices that bridge the physical and digital worlds.
-  tagline_it: Ecosistemi di dispositivi connessi che uniscono il mondo fisico e quello digitale.
+
+
+- key: 
+  label: 
+  icon: 
+  tag: 
+  tagline_en: 
+  tagline_it:
   description_en: ""
   description_it: ""
   research_en: >-
-    We interconnect the physical and digital worlds by creating ecosystems of
-    intelligent devices that communicate with each other, collecting valuable data for
-    automation and remote monitoring.
+  
 
-- key: cloud
-  label: Cloud
-  icon: cloud
-  tag: Cloud
-  tagline_en: Scalable, secure and resilient virtual infrastructures.
-  tagline_it: Infrastrutture virtuali scalabili, sicure e resilienti.
+- key: 
+  label: 
+  icon: 
+  tag: 
+  tagline_en: 
+  tagline_it: 
   description_en: ""
   description_it: ""
   research_en: >-
-    We build scalable, secure, and resilient virtual infrastructures, enabling flexible
-    data management and ubiquitous access to support business growth and research
-    activities.
+  
 
-- key: education
-  label: Education
-  icon: graduation-cap
-  tag: Education
-  thesis: false
+- key: 
+  label:
+  icon: 
+  tag: 
+  tagline_en: 
+  tagline_it: 
+  description_en: ""
+  description_it: ""
   research_en: >-
-    We transfer strategic skills through excellence training programs, preparing
-    students, professionals, and companies to master emerging technologies and lead
-    innovation into the future.
+
+

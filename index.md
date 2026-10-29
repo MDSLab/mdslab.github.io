@@ -107,11 +107,7 @@ image:
 
 <p class="acronimo">Mobile and Distributed Systems Laboratory</p>
 
-MDSLab is a research group at the Department of Engineering of the University of Messina.
 
-<!-- TODO: presentazione del laboratorio (chi lo guida, su cosa lavora, collaborazioni). -->
-
-Our research brings together embedded systems, cybersecurity, artificial intelligence, IoT and cloud computing: the areas are described on the [Research]({{ '/research/' | relative_url }}) page.
 
 {% if site.data.partners.size > 0 %}
 ---
